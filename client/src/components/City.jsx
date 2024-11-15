@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
+import { useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick-theme.css';
 
 import blr from '../assets/images/blr.png';
@@ -16,6 +17,9 @@ const cities = [
 ];
 
 const CitySelection = () => {
+
+  const navigate = useNavigate();
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -35,7 +39,7 @@ const CitySelection = () => {
   };
 
   const openRoomsPage = () => {
-    window.open('/rooms', '_blank');
+    navigate('/rooms');
   };
 
   return (
