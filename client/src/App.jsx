@@ -13,6 +13,8 @@ import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Rooms from './components/Rooms';
 import LocationSection from './components/Location';
+import PrivacyPolicy from './components/PrivacyPolicy'; // Import the PrivacyPolicy component
+import RefundCancellationPolicy from './components/RefundPolicy';
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
               <Feature />
               <TourSection />
               <Testimonial />
-              <LocationSection/>
+              <LocationSection />
               <Contact />
             </>
           } 
@@ -38,7 +40,12 @@ function App() {
 
         {/* Rooms Page */}
         <Route path="/rooms" element={<Rooms />} />
+
+        {/* Privacy Policy Page */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/refund" element={<RefundCancellationPolicy/>}/>
       </Routes>
+      
       
       <Footer />
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
   return (
@@ -6,13 +7,22 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         <div>
           <h2 className="text-2xl font-bold mb-2">Qubenest</h2>
-          <p className="text-gray-400">Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.</p>
+          <ul className="space-y-1">
+            <li>
+              <Link to="/privacy" className="text-gray-400 hover:text-white">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <a href="/refund" className="text-gray-400 hover:text-white">Refund Policy</a>
+            </li>
+          </ul>
         </div>
 
         <div>
           <h3 className="font-semibold mb-2">About Us</h3>
           <p className="text-gray-400">
-            Ideally set in the Nagavara district of Bangalore, Qubenest Elite Manyata PG and Hostel is set 8.5 km from Commercial Street, 9.4 km from Chinnaswamy Stadium, and 10 km from Indira Gandhi Musical Fountain Park. Among the facilities at this property are a shared kitchen and a shared lounge, along with free WiFi throughout the property.
+          Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.
           </p>
         </div>
 
