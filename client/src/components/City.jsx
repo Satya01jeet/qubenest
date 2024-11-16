@@ -43,7 +43,7 @@ const CitySelection = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto text-center py-10 md:py-16 lg:py-20 px-4 lg:px-8">
+    <div className="max-w-[1440px] mx-auto text-center lg:py-2 px-4 lg:px-8">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 lg:mb-16">
         Cities We Serve
       </h2>

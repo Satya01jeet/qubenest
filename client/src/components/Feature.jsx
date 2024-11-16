@@ -1,4 +1,23 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCheckCircle, 
+  faWifi, 
+  faBolt, 
+  faMotorcycle, 
+  faHome, 
+  faDollarSign, 
+  faLock, 
+  faCouch, 
+  faUsers, 
+  faBook, 
+  faShieldAlt, 
+  faDumbbell, 
+  faUtensils, 
+  faSoap, 
+  faCamera 
+} from '@fortawesome/free-solid-svg-icons';
+
 import featureImage from '../assets/images/colive.png';
 import secondImage from '../assets/images/colive2.png';
 import thirdImage from '../assets/images/colive.png';
@@ -13,9 +32,9 @@ const Feature = () => {
             alt: "Group of people enjoying",
             title: "HOME BEYOND WALLS",
             items: [
-                "Enjoy comfortable, fully furnished rooms at affordable prices.",
-                "No hidden fees, no brokerage charges",
-                "Just one month's security deposit",
+                { text: "Enjoy fully furnished rooms at affordable prices.", icon: faHome },
+                { text: "No hidden fees, no brokerage charges", icon: faDollarSign },
+                { text: "Just one month's security deposit", icon: faLock },
             ],
         },
         {
@@ -24,10 +43,10 @@ const Feature = () => {
             alt: "Entertainment space",
             title: "TOGETHER AT HOME",
             items: [
-                "Entertainment Room",
-                "High-Speed WiFi",
-                "24*7 Power Supply",
-                "2-wheeler Parking",
+                { text: "Entertainment Room", icon: faUsers },
+                { text: "High-Speed WiFi", icon: faWifi },
+                { text: "24*7 Power Supply", icon: faBolt },
+                { text: "2-wheeler Parking", icon: faMotorcycle },
             ],
         },
         {
@@ -36,9 +55,9 @@ const Feature = () => {
             alt: "Cozy living space",
             title: "COZY SPACE",
             items: [
-                "Designed for comfort and style.",
-                "Perfect for relaxation and gatherings.",
-                "Embrace a welcoming atmosphere.",
+                { text: "Designed for comfort and style.", icon: faCouch },
+                { text: "Perfect for relaxation and gatherings.", icon: faUsers },
+                { text: "Embrace a welcoming atmosphere.", icon: faCheckCircle },
             ],
         },
         {
@@ -47,10 +66,10 @@ const Feature = () => {
             alt: "Books and workspace",
             title: "SPACE FOR WORK",
             items: [
-                "Books to read",
-                "WFH Friendly",
-                "24*7 Support",
-                "High Security",
+                { text: "Books to read", icon: faBook },
+                { text: "WFH Friendly", icon: faCouch },
+                { text: "24*7 Support", icon: faShieldAlt },
+                { text: "High Security", icon: faLock },
             ],
         },
         {
@@ -59,10 +78,10 @@ const Feature = () => {
             alt: "Active shared spaces",
             title: "ACTIVE SHARED SPACES",
             items: [
-                "Gym access",
-                "Fully equipped kitchen for your meals",
-                "Laundry Service",
-                "CCTV Surveillance",
+                { text: "Gym access", icon: faDumbbell },
+                { text: "Fully equipped kitchen for your meals", icon: faUtensils },
+                { text: "Laundry Service", icon: faSoap },
+                { text: "CCTV Surveillance", icon: faCamera },
             ],
         },
     ];
@@ -97,10 +116,11 @@ const Feature = () => {
                         </h2>
                         <ul className="text-center md:text-center text-base md:text-lg lg:text-xl font-semibold text-gray-700 space-y-4">
                             {section.items.map((item) => (
-                                <li key={`${section.id}-${item}`} 
-                                    className="transition-all duration-300 hover:text-gray-900"
+                                <li key={`${section.id}-${item.text}`} 
+                                    className="flex items-center gap-3 transition-all duration-300 hover:text-gray-900 justify-center"
                                 >
-                                    {item}
+                                    <FontAwesomeIcon icon={item.icon} className="text-gray-700" />
+                                    {item.text}
                                 </li>
                             ))}
                         </ul>

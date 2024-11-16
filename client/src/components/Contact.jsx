@@ -10,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-purple-50 py-12 px-4 md:px-6 rounded-lg shadow-none max-w-3xl mx-auto text-center mb-16">
+    <div className="bg-purple-50 py-12 px-4 md:px-6 rounded-lg shadow-none max-w-3xl mx-auto text-center mb-4 md:my-12">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-900">
         Get in touch with us to receive more information and offers by Qubenest.
       </h2>

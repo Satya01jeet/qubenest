@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         <div>
           <h2 className="text-2xl font-bold mb-2">Qubenest</h2>
-          <p className="text-gray-400">PG , Hostels and Managed Apartments</p>
+          <p className="text-gray-400">Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.</p>
         </div>
 
         <div>
@@ -24,12 +24,20 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
-          <h3 className="font-semibold mb-2">Contact</h3>
-          <ul className="space-y-1">
-            <li className="text-gray-400">Email: info@qubenest.com</li>
-            <li className="text-gray-400">Phone: +91-9874563210</li>
-          </ul>
+        <div className='space-y-4'>
+          <div>
+            <h3 className="font-semibold mb-2">Contact</h3>
+            <ul className="space-y-1">
+              <li className="text-gray-400">Email: Qubenest.booking@gmail.com</li>
+              <li className="text-gray-400">Phone: +91-7619636239</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-2">Address</h3>
+            <p className="space-y-1 text-gray-400">
+            8th Floor, Whitefield Main Rd, Brigade Metropolis, Garudachar Palya, Mahadevapura, Bengaluru, Karnataka 560048
+            </p>
+          </div>
         </div>
       </div>
 

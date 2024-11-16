@@ -8,8 +8,8 @@ const HeroSection = () => {
       {/* text section */}
       <div className="space-y-6 md:ml-24 md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl font-bold text-gray-900">
-            <span className="block text-amber-400 text-xl mb-4">REST, RECHARGE, REPEAT</span>
-            Your Home <br /> Away From Home
+            {/* <span className="block text-amber-400 text-xl mb-4">REST, RECHARGE, REPEAT</span> */}
+            Your <span className='text-amber-400'> Home</span> <br />Away From<span className='text-amber-400'> Home</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-lg lg:mx-2">
             Our comfortable accommodations offer the perfect escape from the hustle and bustle of city life. Whether you're looking to unwind with a good book or simply enjoy some quiet time, our PG provides the ideal environment for rest and rejuvenation.
@@ -20,7 +20,7 @@ const HeroSection = () => {
         </div>
 
       {/* image section */}
-      <div className="my-16 flex md:relative md:w-1/2 justify-center">
+      <div className="my-8 flex md:relative md:w-1/2 justify-center">
           <div className="hidden w-[600px] mt-[-160px] mr-[-150px] md:block">
             <img
               src={bg}
