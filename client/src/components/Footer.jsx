@@ -11,9 +11,7 @@ const Footer = () => {
 
         <div>
           <h3 className="font-semibold mb-2">About Us</h3>
-          <p className="text-gray-400">
-            Ideally set in the Nagavara district of Bangalore, Qubenest Elite Manyata PG and Hostel is set 8.5 km from Commercial Street, 9.4 km from Chinnaswamy Stadium, and 10 km from Indira Gandhi Musical Fountain Park. Among the facilities at this property are a shared kitchen and a shared lounge, along with free WiFi throughout the property.
-          </p>
+          <p className="text-gray-400">Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.</p>
         </div>
 
         <div>
