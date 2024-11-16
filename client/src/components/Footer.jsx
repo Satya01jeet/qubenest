@@ -21,9 +21,7 @@ const Footer = () => {
 
         <div>
           <h3 className="font-semibold mb-2">About Us</h3>
-          <p className="text-gray-400">
-          Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.
-          </p>
+          <p className="text-gray-400">Qubenest, a subsidiary of Qubeplex Stays Pvt. Ltd., is dedicated to providing exceptional accommodation management services, tailored to meet the unique needs of our valued clients.</p>
         </div>
 
         <div>

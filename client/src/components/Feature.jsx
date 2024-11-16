@@ -87,7 +87,7 @@ const Feature = () => {
     ];
 
     return (
-        <div className="max-w-[1440px] mx-auto space-y-20 p-6 lg:p-12 xl:p-16">
+        <div className="max-w-[1440px] mx-auto space-y-20 p-6 mt-8 lg:p-12 xl:p-16">
             {sections.map((section) => (
                 <div
                     key={section.id}
@@ -108,16 +108,16 @@ const Feature = () => {
                             />
                         </div>
                     </div>
-                    <div className={`w-full md:w-1/2 max-w-xl mx-auto md:max-w-none 
+                    <div className={`w-fit md:w-1/2 max-w-xl md:max-w-none 
                         ${section.id % 2 === 0 ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}
                     >
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 text-center md:text-center text-gray-800">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 text-start md:text-start text-gray-800">
                             {section.title}
                         </h2>
-                        <ul className="text-center md:text-center text-base md:text-lg lg:text-xl font-semibold text-gray-700 space-y-4">
+                        <ul className="flex flex-col justify-center md:text-center text-base md:text-lg lg:text-xl font-semibold text-gray-700 space-y-4 max-w-fit">
                             {section.items.map((item) => (
                                 <li key={`${section.id}-${item.text}`} 
-                                    className="flex items-center gap-3 transition-all duration-300 hover:text-gray-900 justify-center"
+                                    className="flex items-center gap-3 transition-all duration-300 hover:text-gray-900 justify-start cursor-default"
                                 >
                                     <FontAwesomeIcon icon={item.icon} className="text-gray-700" />
                                     {item.text}
