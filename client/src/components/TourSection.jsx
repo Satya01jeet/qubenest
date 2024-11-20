@@ -49,7 +49,7 @@ const TourSection = () => {
         <img src={Tour} alt="Tour" className=" rounded-lg mb-4 h-30 " />
         <div>
           <h4 className="font-bold text-gray-800">Visit Scheduled 👍👍👍</h4>
-          <p className="text-gray-500">15th June | by Rajesh Chandran Kattapa</p>
+          <p className="text-gray-500">15th June | by Rajesh Gupta</p>
           <p className="text-sm text-gray-400">24 people liked this</p>
         </div>
       </div>

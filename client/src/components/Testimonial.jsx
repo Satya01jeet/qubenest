@@ -48,9 +48,9 @@ const Testimonial = () => {
   return (
     <div className="flex flex-col md:flex-row justify-around px-4 md:px-24 my-4 md:my-28 space-y-8 md:space-y-0">
       {/* Text Section */}
-      <div className="w-full md:max-w-xl mx-auto text-center md:text-left p-4">
-        <p className="text-black font-bold text-3xl md:text-5xl">What People Say</p>
-        <p className="text-black font-bold text-3xl md:text-5xl">About Us.</p>
+      <div className="w-full md:max-w-xl mx-auto text-center md:text-left p-4 font-winterSelfie">
+        <p className="text-black text-4xl md:text-5xl">What People Say</p>
+        <p className="text-black text-4xl md:text-5xl">About Us</p>
       </div>
 
       {/* Testimonial Section */}

@@ -8,6 +8,9 @@ export default {
       colors: {
         gold: '#FFD700',
       },
+      fontFamily: {
+        'winterSelfie': ['winterSelfie', 'sans-serif']
+      }
     },
   },
   plugins: [],
