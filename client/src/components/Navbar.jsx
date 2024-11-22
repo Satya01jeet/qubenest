@@ -1,11 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../assets/images/icon.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   let lastScrollY = window.scrollY;
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if(element){
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+  }
+
+  const handleExploreResidences = (e) => {
+    e.preventDefault();
+    if(location.pathname !== '/'){
+      navigate('/');
+      setTimeout(()=>{
+        scrollToSection('city-section');
+      },200)
+    } else {
+      scrollToSection('city-section');
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +71,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex md:items-center space-x-6 text-black font-semibold">
-        <a href="#explore" className="hover:text-zinc-200 transition">
+        <a href="" className="hover:text-zinc-200 transition" onClick={handleExploreResidences} >
           Explore Residences
         </a>
         <a href="#schedule" className="hover:text-zinc-200 transition">
@@ -63,7 +85,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center space-y-4 py-6">
-          <a href="#explore" className="text-black font-semibold hover:text-zinc-800 transition" onClick={toggleMobileMenu}>
+          <a href="#explore" className="text-black font-semibold hover:text-zinc-800 transition" onClick={handleExploreResidences}>
             Explore Residences
           </a>
           <a href="#schedule" className="text-black font-semibold hover:text-zinc-200 transition" onClick={toggleMobileMenu}>

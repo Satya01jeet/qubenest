@@ -43,7 +43,7 @@ const CitySelection = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto text-center lg:py-2 md:mt-16 lg:mt-16 px-4 lg:px-8">
+    <div id='city-section' className="max-w-[1440px] mx-auto text-center lg:py-2 md:mt-16 lg:mt-16 px-4 lg:px-8">
       <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-12 lg:mb-16 font-bold">
         Cities We Serve
       </h2>
@@ -63,8 +63,7 @@ const CitySelection = () => {
               />
             </div>
             <div
-              className="font-semibold text-xl lg:text-2xl text-gray-700 mb-5"
-              style={{ textShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)' }}
+              className="font-semibold text-md lg:text-lg text-gray-800 mb-5"
             >
               {city.name}
             </div>
