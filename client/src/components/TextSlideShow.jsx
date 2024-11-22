@@ -25,7 +25,7 @@ const TextSlideshow = () => {
                 {slides.map((text, index) => (
                     <div
                         key={index}
-                        className={`absolute w-full text-center transition-all duration-500 ease-in-out transform
+                        className={`absolute w-full text-center transition-all duration-1000 ease-in-out transform
                             ${index === currIndex 
                                 ? 'translate-x-0 opacity-100' 
                                 : index < currIndex 

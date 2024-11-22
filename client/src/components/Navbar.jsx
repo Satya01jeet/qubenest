@@ -63,7 +63,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center space-y-4 py-6">
-          <a href="#explore" className="text-black font-semibold hover:text-zinc-200 transition" onClick={toggleMobileMenu}>
+          <a href="#explore" className="text-black font-semibold hover:text-zinc-800 transition" onClick={toggleMobileMenu}>
             Explore Residences
           </a>
           <a href="#schedule" className="text-black font-semibold hover:text-zinc-200 transition" onClick={toggleMobileMenu}>
