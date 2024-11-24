@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       {/* image section */}
       <div className="my-8 flex md:relative md:w-1/2 justify-center">
-        <div className="hidden w-[600px] mt-[-160px] mr-[-150px] md:block">
+        <div className="hidden w-[600px] mt-[-160px] mr-[-200px] md:block">
           <img
             src={bg}
             alt=""
@@ -33,7 +33,7 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="w-[500px] md:absolute md:top-[-55px] md:left-[-50px] md:w-[600px]">
+        <div className="w-[500px] md:absolute md:top-[-55px] md:left-[10px] md:w-[600px]">
           <img
             src={hero_img}
             alt="Traveler with luggage"
