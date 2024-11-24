@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../assets/images/icon.png';
+import Logo from '../assets/images/logo_2.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -52,13 +52,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full backdrop-blur shadow-lg fixed top-0 z-50 flex justify-between items-center py-4 transition-all duration-500 px-4 sm:px-24 ${
+      className={`w-full backdrop-blur shadow-lg fixed top-0 z-50 flex justify-between items-center py-1 transition-all duration-500 px-4 sm:px-24 ${
         isScrollingUp ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="flex items-center">
         <a href="#">
-          <img src={Logo} alt="Logo" className="h-10" />
+          <img src={Logo} alt="Logo" className="h-16" />
         </a>
       </div>
 
