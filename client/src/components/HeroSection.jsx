@@ -17,11 +17,14 @@ const HeroSection = () => {
       {/* text section */}
       <div className="flex flex-col md:mt-16 md:w-1/2">
         <div className="space-y-6 md:ml-24 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 font-winterSelfie">
-            Your <span className='text-amber-400'> Home</span> <br />Away From<span className='text-amber-400'> Home</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-merriweather">
+            A <span className='text-amber-400'>Home</span>
+             <br />
+             Away From
+             <span className='text-amber-400'> Home</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-lg lg:mx-2">
-            Our comfortable accommodations offer the perfect escape from the hustle and bustle of city life. Whether you're looking to unwind with a good book or simply enjoy some quiet time, our PG provides the ideal environment for rest and rejuvenation.
+          An accommodation which gives you the warmth of your home, familiarity of your surrounding, comfort of your own bed, and sense of community and belongings.
           </p>
           <button className="mt-4 px-6 py-3 bg-gold text-black rounded-lg shadow-lg hover:bg-amber-500 active:scale-95 transition ease-in-out font-semibold" onClick={toggleCallbackModal}>
             Book a <span className='text-orange-600 font-bold text-lg'>FREE</span> callback 📞

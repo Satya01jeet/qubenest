@@ -9,7 +9,8 @@ export default {
         gold: '#FFD700',
       },
       fontFamily: {
-        'winterSelfie': ['winterSelfie', 'sans-serif']
+        'winterSelfie': ['winterSelfie', 'sans-serif'],
+        'merriweather': ['Merriweather', 'serif'],
       }
     },
   },

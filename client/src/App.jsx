@@ -32,7 +32,6 @@ function App() {
               <TourSection />
               <Testimonial />
               <LocationSection />
-              <Contact />
             </>
           } 
         />

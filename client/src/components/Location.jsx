@@ -4,19 +4,18 @@ import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
 const LocationSection = () => {
   const businessInfo = {
     name: "Qubenest Elite Co-living PG",
-    address: "Near Manyata Tech Park, Bangalore",
-    phone: "+1 (234) 567-8900", // Replace with actual phone
+    address: "Site No-16, Bus point, Survey No -141, Service Rd, Nagawara, Bengaluru, Karnataka 560045",
+    phone: "+91 7619636239", 
     email: "contact@qubenest.com", // Replace with actual email
     hours: [
-      "Monday - Friday: 9:00 AM - 6:00 PM",
-      "Saturday: 10:00 AM - 4:00 PM",
-      "Sunday: Closed",
+      "Opens 365 Days - 24*7",
+      
     ],
   };
 
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 mb-16">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-winterSelfie text-gray-900 mb-4">
             Our Location
