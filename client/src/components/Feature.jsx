@@ -111,7 +111,7 @@ const Feature = () => {
                     <div className={`w-fit md:w-1/2 max-w-xl md:max-w-none 
                         ${section.id % 2 === 0 ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}
                     >
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 lg:mb-8 text-start md:text-start text-gray-800 font-winterSelfie">
+                        <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl mb-6 lg:mb-8 text-start md:text-start text-gray-800 font-merriWeather">
                             {section.title}
                         </h2>
                         <ul className="flex flex-col justify-center md:text-center text-base md:text-lg lg:text-xl font-semibold text-gray-700 space-y-4 max-w-fit">
