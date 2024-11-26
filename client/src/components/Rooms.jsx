@@ -20,7 +20,6 @@ const Rooms = () => {
 
     const [soloFeatures, setSoloFeatures] = useState({
         balcony: 'None',
-        bathroom: 'Detached',
         duration: '11 Months',
     });
 
@@ -72,8 +71,8 @@ const Rooms = () => {
                             onChange={(e) => setBuddyFeatures({ ...buddyFeatures, bathroom: e.target.value })}
                             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300 shadow-md"
                         >
-                            <option value="Attached">Solo</option>
-                            <option value="Detached">Co-Living</option>
+                            <option value="Attached">Single Sharing</option>
+                            <option value="Detached">Double sharing</option>
                         </select>
 
                         <label className="block font-semibold text-gray-700 mt-2">Duration</label>
@@ -120,18 +119,8 @@ const Rooms = () => {
                             onChange={(e) => setSoloFeatures({ ...soloFeatures, balcony: e.target.value })}
                             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md"
                         >
-                            <option value="None">Coliving</option>
-                            <option value="Attached">Solo</option>
-                        </select>
-
-                        <label className="block font-semibold text-gray-700 mt-2">Bathroom</label>
-                        <select
-                            value={soloFeatures.bathroom}
-                            onChange={(e) => setSoloFeatures({ ...soloFeatures, bathroom: e.target.value })}
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md"
-                        >
-                            <option value="Detached">Detached</option>
-                            <option value="Attached">Attached</option>
+                            <option value="Attached">Single Sharing</option>
+                            <option value="Detached">Double sharing</option>
                         </select>
 
                         <label className="block font-semibold text-gray-700 mt-2">Duration</label>
@@ -141,7 +130,6 @@ const Rooms = () => {
                             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md"
                         >
                             <option value="11 Months">Daily Basic</option>
-                            <option value="11 Months">Weekly Basic</option>
                             <option value="3 Day Trial">Monthly Basis</option>
                         </select>
 

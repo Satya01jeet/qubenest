@@ -5,15 +5,15 @@ const RoomFeatures = () => {
   const initialFeatures = [
     { icon: <FaBath />, text: "Attached Washroom" },
     { icon: <FaBox />, text: "Cupboard" }, // FaBox used as a substitute
-    { icon: <FaTable />, text: "Working Table" },
+    { icon: <FaTable />, text: "Work Station" },
     { icon: <FaSnowflake />, text: "Curtains/Blinds" },
-    { icon: <FaShoePrints />, text: "Shoe Stand" },
+    { icon: <FaShoePrints />, text: "Shoe Rack" },
     { icon: <FaBroom />, text: "Daily Cleaning" }
   ];
 
   const basicNeedsFeatures = [
     { icon: <FaTshirt />, text: "Laundry Service" },
-    { icon: <FaBox />, text: "Fridge" },
+    { icon: <FaBox />, text: "Mini-Fridge" },
     { icon: <FaTv />, text: "Television" },
     { icon: <FaFan />, text: "Air Conditioned" },
     { icon: <FaConciergeBell />, text: "24hrs Front Desk" },
@@ -38,11 +38,11 @@ const RoomFeatures = () => {
         ))}
       </div>
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-6 mb-4 text-center">
+      {/* <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-6 mb-4 text-center">
         Room Features
-      </h2>
+      </h2> */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg text-gray-700">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg text-gray-700 mt-4">
         {basicNeedsFeatures.map((feature, index) => (
           <div 
             key={index} 
