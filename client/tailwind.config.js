@@ -10,7 +10,7 @@ export default {
       },
       fontFamily: {
         'winterSelfie': ['winterSelfie', 'sans-serif'],
-        'merriWeather': ['merriWeather', 'sans-serif'],
+        'merriweather': ['Merriweather', 'serif'],
       }
     },
   },
