@@ -14,6 +14,7 @@ import Rooms from './components/Rooms';
 import LocationSection from './components/Location';
 import PrivacyPolicy from './components/PrivacyPolicy'; // Import the PrivacyPolicy component
 import RefundCancellationPolicy from './components/RefundPolicy';
+import Termsandcondition from './components/Termsandcondition'
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         {/* Privacy Policy Page */}
         <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/refund" element={<RefundCancellationPolicy/>}/>
+      <Route path="/tnc" element={<Termsandcondition/>}/>
       </Routes>
       
       
