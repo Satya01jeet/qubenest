@@ -4,7 +4,7 @@ import Tour from '../assets/images/Tour.jpg'
 
 const TourSection = () => {
   return (
-    <section className="flex flex-col lg:flex-row lg:px-36 lg:justify-around items-center justify-between space-y-6 lg:space-y-0 lg:space-x-6 p-8">
+    <section id='visit-section' className="flex flex-col lg:flex-row lg:px-36 lg:justify-around items-center justify-between space-y-6 lg:space-y-0 lg:space-x-6 p-8">
       {/* Left Section */}
       <div className="flex flex-col space-y-6 lg:max-w-md">
         <h2 className="text-3xl font-bold text-gray-900">
@@ -41,7 +41,7 @@ const TourSection = () => {
             </div>
           </div>
         </div>
-        <button className="bg-myred text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-700 hover:scale-105 active:scale-100 transition">Visit Now</button>
+        <button className="bg-gold hover:bg-amber-500 text-black px-4 py-2 rounded-lg shadow-lg active:bg-amber-300 transition ">Visit Now</button>
       </div>
 
       {/* Right Section */}

@@ -30,6 +30,18 @@ const Navbar = () => {
     }
   };
 
+  const handleScheduleVisit = (e) => {
+    e.preventDefault();
+    if(location.pathname !== "/"){
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection("visit-section");
+      }, 200);
+    } else {
+      scrollToSection('visit-section')
+    }
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -85,7 +97,7 @@ const Navbar = () => {
           >
             Explore Residences
           </a>
-          <a href="#schedule" className="hover:text-zinc-200 transition">
+          <a href="#schedule" className="hover:text-zinc-200 transition" onClick={handleScheduleVisit}>
             Schedule a Visit
           </a>
           <button
