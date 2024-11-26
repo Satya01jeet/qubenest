@@ -21,7 +21,6 @@ const RefundCancellationPolicy = () => {
         By registering for and/or using the Platform and the Services, you agree to abide by these Terms and all other operational rules, policies, and procedures posted on the Platform by us, each of which is included by reference and may be updated periodically without prior notice. Certain Services may be governed by additional terms and conditions specified by us from time to time, and your utilization of such Services is subject to those additional terms and conditions, which are integrated into these Terms. The terms and conditions governing the stay of residents at the residential accommodations featured on the Platform can be accessed here, and they are applicable to all Qubenest residents.
         </p>
       </div>
-
     </div>
   );
 };
