@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/images/logo_2.png";
+import Logo from "../assets/images/logo_3.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
