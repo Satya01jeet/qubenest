@@ -17,7 +17,7 @@ const HeroSection = () => {
       {/* text section */}
       <div className="flex flex-col md:mt-16 md:w-1/2">
         <div className="space-y-6 md:ml-24 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 font-winterSelfie">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 font-merriWeather">
             Your <span className='text-amber-400'> Home</span> <br />Away From<span className='text-amber-400'> Home</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-lg lg:mx-2">
