@@ -22,7 +22,7 @@ import featureImage from '../assets/images/couple.png';
 import secondImage from '../assets/images/colive1.jpg';
 import thirdImage from '../assets/images/kitchen.png';
 import fourthImage from '../assets/images/colive.png';
-import fifthImage from '../assets/images/gym.png';
+import fifthImage from '../assets/images/gym1.png';
 
 const Feature = () => {
     const features = [
@@ -70,7 +70,7 @@ const Feature = () => {
             alt: "Books and workspace",
             title: "Seize the moment, cherish the memories",
             items: [
-                { text: "Making Your Abs work", icon: faUsers },
+                { text: "Making Your Abs", icon: faUsers },
                 { text: "High-Speed WiFi", icon: faWifi },
                 { text: "24*7 Power Supply", icon: faBolt },
                 { text: "2-wheeler Parking", icon: faMotorcycle },
