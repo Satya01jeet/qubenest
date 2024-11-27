@@ -19,7 +19,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import featureImage from '../assets/images/couple.png';
-import secondImage from '../assets/images/colive1.jpg';
+import secondImage from '../assets/images/Colive1.jpg';
 import thirdImage from '../assets/images/kitchen.png';
 import fourthImage from '../assets/images/colive.png';
 import fifthImage from '../assets/images/gym.png';
