@@ -1,106 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import blr from '../assets/images/blr2.jpg';
 
-const cities = [
-  { name: 'Bangalore', image: blr },
-];
-
 const CitySelection = () => {
   const navigate = useNavigate();
+  const [selectedArea, setSelectedArea] = useState('');
+
+  const handleAreaChange = (event) => {
+    setSelectedArea(event.target.value);
+  };
 
   const openRoomsPage = () => {
-    navigate('/rooms');
+    if (selectedArea) {
+      navigate(`/rooms?area=${selectedArea}`);
+    } else {
+      alert('Please select an area.');
+    }
   };
 
   return (
-    <div id="city-section" className="max-w-[1440px] mx-auto text-center lg:py-2 md:mt-16 lg:mt-16 px-4 lg:px-8">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-12 lg:mb-16 font-merriweather font-bold">
+    <div className="max-w-[1440px] mx-auto text-center py-8 px-4 lg:px-8">
+      {/* Main Heading */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-20 font-merriweather">
         We serve in your city - Bangalore
       </h2>
 
-      {/* Desktop view */}
-      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-12 justify-items-center">
-        {cities.map((city) => (
-          <div
-            key={city.name}
-            className="p-4 lg:p-6 bg-white shadow-lg rounded-lg w-full max-w-sm h-auto transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
-          >
-            <div className="aspect-w-16 aspect-h-9 mb-5">
-              <img
-                src={city.image}
-                alt={city.name}
-                className="w-full h-56 lg:h-56 object-cover rounded-lg"
-              />
-            </div>
-            <div className="mt-4">
-              {city.name === 'Bangalore' ? (
-                <button
-                  onClick={openRoomsPage}
-                  className="w-full px-6 py-3 bg-gold text-black rounded-lg shadow-md 
-                           hover:bg-yellow-400 transition-colors duration-300
-                           text-lg font-medium"
-                >
-                  View Rooms
-                </button>
-              ) : (
-                <button
-                  className="w-full px-6 py-3 bg-gray-500 text-white rounded-lg shadow-md
-                           cursor-not-allowed transition-colors duration-300
-                           text-lg font-medium"
-                  disabled
-                >
-                  Coming Soon
-                </button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-32">
+        {/* Image Section */}
+        <div className="flex-shrink-0">
+          <img
+            src={blr}
+            alt="Bangalore"
+            className="w-[300px] md:w-[400px] rounded-lg shadow-lg object-cover"
+          />
+        </div>
 
-      {/* Mobile view without slider */}
-      <div className="md:hidden px-4 pb-8">
-        {cities.map((city) => (
-          <div
-            key={city.name}
-            className="bg-white shadow-lg rounded-lg p-4 h-auto mx-2"
-          >
-            <div className="aspect-w-16 aspect-h-9 mb-4">
-              <img
-                src={city.image}
-                alt={city.name}
-                className="w-full h-48 object-cover rounded-lg"
-              />
-            </div>
-            <div
-              className="font-semibold text-xl text-gray-700 mb-4"
-              style={{ textShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)' }}
+        {/* Text and Dropdown Section */}
+        <div className="text-left font-merriweather">
+          <h3 className="text-4xl font-bold mb-4 text-amber-500">We are Located at :-</h3>
+          <div className="mb-6">
+            <select
+              id="area-select"
+              value={selectedArea}
+              onChange={handleAreaChange}
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
             >
-              {city.name}
-            </div>
-            <div className="pb-4">
-              {city.name === 'Bangalore' ? (
-                <button
-                  onClick={openRoomsPage}
-                  className="w-full px-6 py-3 bg-gold text-black rounded-lg shadow-md 
-                           hover:bg-yellow-400 transition-colors duration-300
-                           text-lg font-medium"
-                >
-                  View Rooms
-                </button>
-              ) : (
-                <button
-                  className="w-full px-6 py-3 bg-gray-500 text-white rounded-lg shadow-md
-                           cursor-not-allowed transition-colors duration-300
-                           text-lg font-medium"
-                  disabled
-                >
-                  Coming Soon
-                </button>
-              )}
-            </div>
+              <option value="" disabled>
+                Select an area
+              </option>
+              <option value="area1">Manyata Tech Park</option>
+              <option value="area2">White Field</option>
+              <option value="area3">Marathahalli</option>
+              <option value="area4">Indiranagar</option>
+            </select>
           </div>
-        ))}
+          <button
+            onClick={openRoomsPage}
+            className="w-full md:w-auto px-6 py-3 bg-yellow-400 text-black font-medium rounded-lg shadow-md hover:bg-yellow-500 transition-colors duration-300"
+          >
+            View Rooms
+          </button>
+        </div>
       </div>
     </div>
   );
