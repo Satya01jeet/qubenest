@@ -85,9 +85,9 @@ const Rooms = () => {
                             <option value="Monthly Basis">Monthly Basis</option>
                         </select>
 
-                        <p className="mt-4 text-green-800 text-xl font-semibold drop-shadow-lg">₹1,199* <span className="text-sm">(+ GST as applicable)</span></p>
+                        <p className="mt-4 text-green-800 text-xl font-semibold drop-shadow-lg">Starts at ₹8999/- <span className="text-sm">(+ GST as applicable)</span></p>
                         <button className="mt-4 w-full bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 shadow-lg">
-                            Package Details
+                            Explore Rooms
                         </button>
                     </div>
                 </div>
@@ -133,9 +133,9 @@ const Rooms = () => {
                             <option value="3 Day Trial">Monthly Basis</option>
                         </select>
 
-                        <p className="mt-4 text-red-700 text-xl font-semibold drop-shadow-lg">Oops! No Rooms Available</p>
-                        <button className="mt-4 w-full bg-gray-500 text-white px-4 py-2 rounded cursor-not-allowed shadow-lg">
-                            Package Details
+                        <p className="mt-4 text-green-800 text-xl font-semibold drop-shadow-lg">Starts at ₹7499/- <span className="text-sm">(+ GST as applicable)</span></p>
+                        <button className="mt-4 w-full bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 shadow-lg">
+                            Explore Rooms
                         </button>
                     </div>
                 </div>
