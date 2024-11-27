@@ -25,16 +25,17 @@ import fourthImage from '../assets/images/books.png';
 import fifthImage from '../assets/images/gym.png';
 
 const Feature = () => {
-    const sections = [
+    const features = [
         {
             id: 1,
             image: featureImage,
             alt: "Group of people enjoying",
-            title: "HOME BEYOND WALLS",
+            title: "It's not ROCKET science, it's POCKET science",
             items: [
-                { text: "Enjoy fully furnished rooms at affordable prices.", icon: faHome },
-                { text: "No hidden fees, no brokerage charges", icon: faDollarSign },
-                { text: "Just one month's security deposit", icon: faLock },
+                { text: "Luxury @ reasonable price", icon: faHome },
+                { text: "Goodbye to brokers", icon: faDollarSign },
+                { text: "Fully equipped luxurious homes", icon: faLock },
+                { text: "Loaded ammenities for ultimate comfort", icon: faLock },
             ],
         },
         {
@@ -53,7 +54,7 @@ const Feature = () => {
             id: 3,
             image: thirdImage,
             alt: "Cozy living space",
-            title: "COZY SPACE",
+            title: "Seize the moment, cherish the memories",
             items: [
                 { text: "Designed for comfort and style.", icon: faCouch },
                 { text: "Perfect for relaxation and gatherings.", icon: faUsers },
@@ -64,12 +65,12 @@ const Feature = () => {
             id: 4,
             image: fourthImage,
             alt: "Books and workspace",
-            title: "SPACE FOR WORK",
+            title: "Where elegance meets exceptional service",
             items: [
-                { text: "Books to read", icon: faBook },
-                { text: "WFH Friendly", icon: faCouch },
-                { text: "24*7 Support", icon: faShieldAlt },
-                { text: "High Security", icon: faLock },
+                { text: "Daily cleaning - bringing shine to every corner", icon: faBook },
+                { text: "24x7 CCTV serveiliance - your security our priority", icon: faCouch },
+                { text: "Fast reliable wifi always", icon: faShieldAlt },
+                { text: "Bio-metrics entry/exit", icon: faLock },
             ],
         },
         {
@@ -87,43 +88,26 @@ const Feature = () => {
     ];
 
     return (
-        <div className="max-w-[1440px] mx-auto space-y-20 p-6 mt-8 lg:p-12 xl:p-16">
-            {sections.map((section) => (
-                <div
-                    key={section.id}
-                    className="flex flex-col md:flex-row gap-8 lg:gap-12 xl:gap-16 justify-center items-center"
-                >
-                    <div 
-                        className={`w-full md:w-1/2 ${
-                            section.id % 2 === 0 ? 'md:order-last' : ''
-                        }`}
-                    >
-                        <div className={`bg-amber-100 p-4 lg:p-6 rounded-lg shadow-lg inline-block 
-                            ${section.id % 2 === 0 ? 'md:ml-8 lg:ml-12 xl:ml-16' : 'md:mr-8 lg:mr-12 xl:mr-16'}`}
-                        >
-                            <img
-                                src={section.image}
-                                alt={section.alt}
-                                className="rounded-lg w-full h-auto max-w-2xl"
-                            />
-                        </div>
+        <div className='space-y-4 my-20'>
+            {features.map((feature)=>(
+                <div id={feature.id}
+                className={`flex flex-col ${feature.id%2 === 0 ? 'md:flex-row':'md:flex-row-reverse'} md:items-center md:justify-evenly md:shadow-none shadow-lg rounded-lg mx-4 p-4 my-10`}>
+
+                    {/* Image section */}
+                    <div className='w-full md:w-1/2 px-10 py-5'>
+                        <img src={feature.image} alt={feature.alt} className='rounded-ss-[50px] rounded-ee-[50px]' />
                     </div>
-                    <div className={`w-fit md:w-1/2 max-w-xl md:max-w-none 
-                        ${section.id % 2 === 0 ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}
-                    >
-                        <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl mb-6 lg:mb-8 text-start md:text-start text-gray-800 font-merriWeather">
-                            {section.title}
-                        </h2>
-                        <ul className="flex flex-col justify-center md:text-center text-base md:text-lg lg:text-xl font-semibold text-gray-700 space-y-4 max-w-fit">
-                            {section.items.map((item) => (
-                                <li key={`${section.id}-${item.text}`} 
-                                    className="flex items-center gap-3 transition-all duration-300 hover:text-gray-900 justify-start cursor-default"
-                                >
-                                    <FontAwesomeIcon icon={item.icon} className="text-gray-700" />
+
+                    {/* Text section */}
+                    <div className='flex flex-col md:w-1/2 items-center'>
+                        <h2 className='text-2xl md:text-3xl mb-4 font-bold text-centre'>{feature.title}</h2>
+                        <div className=''>
+                            {feature.items.map((item) => (
+                                <div className='text-center md:text-xl'>
                                     {item.text}
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
             ))}

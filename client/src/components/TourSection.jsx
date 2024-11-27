@@ -41,7 +41,7 @@ const TourSection = () => {
             </div>
           </div>
         </div>
-        <button className="bg-gold hover:bg-amber-500 text-black px-4 py-2 rounded-lg shadow-lg active:bg-amber-300 transition ">Visit Now</button>
+        <button className="bg-amber-400 hover:bg-amber-500 text-black px-4 py-2 rounded-lg shadow-lg active:bg-amber-300 transition ">Visit Now</button>
       </div>
 
       {/* Right Section */}
