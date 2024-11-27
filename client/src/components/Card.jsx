@@ -26,7 +26,7 @@ const Card = () => {
   ];
 
   return (
-    <div className="flex flex-wrap md:flex-row p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-wrap md:flex-row p-6 bg-white min-h-screen">
       {/* Left */}
       <div className="flex flex-col gap-4 w-full lg:w-2/3">
         {listings.map((listing, index) => (

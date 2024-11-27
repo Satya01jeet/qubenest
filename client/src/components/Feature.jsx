@@ -18,7 +18,7 @@ import {
   faCamera 
 } from '@fortawesome/free-solid-svg-icons';
 
-import featureImage from '../assets/images/colive.png';
+import featureImage from '../assets/images/couple.png';
 import secondImage from '../assets/images/colive2.png';
 import thirdImage from '../assets/images/colive.png';
 import fourthImage from '../assets/images/books.png';
@@ -32,22 +32,22 @@ const Feature = () => {
             alt: "Group of people enjoying",
             title: "It's not ROCKET science, it's POCKET science",
             items: [
-                { text: "Luxury @ reasonable price", icon: faHome },
-                { text: "Goodbye to brokers", icon: faDollarSign },
-                { text: "Fully equipped luxurious homes", icon: faLock },
-                { text: "Loaded ammenities for ultimate comfort", icon: faLock },
+                { text: "Say Goodbye to Brokers", icon: faDollarSign },
+                { text: "Luxury @Reasonable Price", icon: faHome },
+                { text: "Fully Equipped Luxurious Homes", icon: faLock },
+                { text: "Loaded with Ammenities for Ultimate Comfort", icon: faLock },
             ],
         },
         {
             id: 2,
             image: secondImage,
             alt: "Entertainment space",
-            title: "TOGETHER AT HOME",
+            title: "Where elegance meets exceptional service",
             items: [
-                { text: "Entertainment Room", icon: faUsers },
-                { text: "High-Speed WiFi", icon: faWifi },
-                { text: "24*7 Power Supply", icon: faBolt },
-                { text: "2-wheeler Parking", icon: faMotorcycle },
+                { text: "Daily housekeeping - bringing shine to every corner", icon: faBook },
+                { text: "24x7 CCTV serveiliance - your security our priority", icon: faCouch },
+                { text: "Fast reliable wifi always", icon: faShieldAlt },
+                { text: "Bio-metrics entry/exit", icon: faLock },
             ],
         },
         {
@@ -67,10 +67,10 @@ const Feature = () => {
             alt: "Books and workspace",
             title: "Where elegance meets exceptional service",
             items: [
-                { text: "Daily cleaning - bringing shine to every corner", icon: faBook },
-                { text: "24x7 CCTV serveiliance - your security our priority", icon: faCouch },
-                { text: "Fast reliable wifi always", icon: faShieldAlt },
-                { text: "Bio-metrics entry/exit", icon: faLock },
+                { text: "Entertainment Room", icon: faUsers },
+                { text: "High-Speed WiFi", icon: faWifi },
+                { text: "24*7 Power Supply", icon: faBolt },
+                { text: "2-wheeler Parking", icon: faMotorcycle },
             ],
         },
         {
@@ -100,7 +100,7 @@ const Feature = () => {
 
                     {/* Text section */}
                     <div className='flex flex-col md:w-1/2 items-center'>
-                        <h2 className='text-2xl md:text-3xl mb-4 font-bold text-centre'>{feature.title}</h2>
+                        <h2 className='text-2xl md:text-3xl mb-8 font-bold text-centre font-merriweather'>{feature.title}</h2>
                         <div className=''>
                             {feature.items.map((item) => (
                                 <div className='text-center md:text-xl'>

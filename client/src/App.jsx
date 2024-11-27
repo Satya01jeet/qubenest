@@ -15,7 +15,6 @@ import LocationSection from './components/Location';
 import PrivacyPolicy from './components/PrivacyPolicy'; // Import the PrivacyPolicy component
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
-import Card from './components/Card'
 
 function App() {
   return (
@@ -34,7 +33,6 @@ function App() {
               <TourSection />
               <Testimonial />
               <LocationSection />
-              <Card/>
             </>
           } 
         />

@@ -10,6 +10,7 @@ import image3 from '../assets/images/img3.png';
 import image4 from '../assets/images/img4.png';
 import RoomFeatures from './RoomFeatures';
 import RoomImage from './RoomImage';
+import Card from './Card';
 
 const Rooms = () => {
     const [buddyFeatures, setBuddyFeatures] = useState({
@@ -141,6 +142,7 @@ const Rooms = () => {
                 </div>
             </div>
 
+            <Card/>
             <RoomFeatures />
             <RoomImage/>
         </div>

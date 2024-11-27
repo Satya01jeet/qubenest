@@ -4,16 +4,16 @@ import 'slick-carousel/slick/slick.css';
 import { useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick-theme.css';
 
-import blr from '../assets/images/blr.png';
+import blr from '../assets/images/blr2.jpg';
 import mum from '../assets/images/mum.png';
 import del from '../assets/images/del.png';
 import pune from '../assets/images/pune.png';
 
 const cities = [
   { name: 'Bangalore', image: blr },
-  { name: 'Pune', image: pune },
-  { name: 'Mumbai', image: mum },
-  { name: 'Delhi NCR', image: del },
+  // { name: 'Pune', image: pune },
+  // { name: 'Mumbai', image: mum },
+  // { name: 'Delhi NCR', image: del },
 ];
 
 const CitySelection = () => {
@@ -45,7 +45,7 @@ const CitySelection = () => {
   return (
     <div id='city-section' className="max-w-[1440px] mx-auto text-center lg:py-2 md:mt-16 lg:mt-16 px-4 lg:px-8">
       <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-12 lg:mb-16 font-merriWeather font-bold">
-        Cities We Serve
+        We serve in your city - Bangalore
       </h2>
 
       {/* Desktop view */}
@@ -59,14 +59,14 @@ const CitySelection = () => {
               <img
                 src={city.image}
                 alt={city.name}
-                className="w-full h-48 lg:h-56 object-cover rounded-lg"
+                className="w-full h-56 lg:h-56 object-cover rounded-lg"
               />
             </div>
-            <div
+            {/* <div
               className="font-semibold text-md lg:text-lg text-gray-800 mb-5"
             >
               {city.name}
-            </div>
+            </div> */}
             <div className="mt-4">
               {city.name === 'Bangalore' ? (
                 <button
