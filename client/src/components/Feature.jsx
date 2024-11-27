@@ -20,7 +20,7 @@ import {
 
 import featureImage from '../assets/images/couple.png';
 import secondImage from '../assets/images/colive1.jpg';
-import thirdImage from '../assets/images/colive.png';
+import thirdImage from '../assets/images/kitchen.jpg';
 import fourthImage from '../assets/images/books.png';
 import fifthImage from '../assets/images/gym.png';
 
@@ -49,25 +49,26 @@ const Feature = () => {
                 { text: "Fast Reliable WiFi always", icon: faShieldAlt },
                 { text: "Your Security our Priority - 24x7 CCTV Surveilliance", icon: faCouch },
                 { text: "Entry/Exit at Your Fingertips - Bio-metric Entry", icon: faLock },
-                // { text: "Your Kitchen Your Way - Fully Equipped Kitchen", icon: faLock },
             ],
         },
         {
             id: 3,
             image: thirdImage,
             alt: "Cozy living space",
-            title: "Seize the moment, cherish the memories",
+            title: "Your Dream Stay Made Simple",
             items: [
-                { text: "Designed for comfort and style.", icon: faCouch },
-                { text: "Perfect for relaxation and gatherings.", icon: faUsers },
-                { text: "Embrace a welcoming atmosphere.", icon: faCheckCircle },
+                { text: "Backup that Never Lets You Down - 24X7 Power Backup", icon: faCouch },
+                { text: "Your Kitchen Your Way - Fully Equipped Kitchen", icon: faLock },
+                { text: "Laundry Made Easy by You - Self Laundry", icon: faCheckCircle },
+                { text: "Pure Water, Pure Life - Unlimited RO Water", icon: faCheckCircle },
+                { text: "Unlimited Water Supply - Around the Clock, Around Your Needs", icon: faCheckCircle },
             ],
         },
         {
             id: 4,
             image: fourthImage,
             alt: "Books and workspace",
-            title: "Where elegance meets exceptional service",
+            title: "Seize the moment, cherish the memories",
             items: [
                 { text: "Entertainment Room", icon: faUsers },
                 { text: "High-Speed WiFi", icon: faWifi },
