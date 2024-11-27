@@ -19,7 +19,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import featureImage from '../assets/images/couple.png';
-import secondImage from '../assets/images/colive2.png';
+import secondImage from '../assets/images/colive1.jpg';
 import thirdImage from '../assets/images/colive.png';
 import fourthImage from '../assets/images/books.png';
 import fifthImage from '../assets/images/gym.png';
@@ -36,18 +36,20 @@ const Feature = () => {
                 { text: "Luxury @Reasonable Price", icon: faHome },
                 { text: "Fully Equipped Luxurious Homes", icon: faLock },
                 { text: "Loaded with Ammenities for Ultimate Comfort", icon: faLock },
+                { text: "A Perfect Stay for Perfect Pairs - Couples", icon: faLock },
             ],
         },
         {
             id: 2,
             image: secondImage,
             alt: "Entertainment space",
-            title: "Where elegance meets exceptional service",
+            title: "Where Elegance Meets Exceptional Services",
             items: [
-                { text: "Daily housekeeping - bringing shine to every corner", icon: faBook },
-                { text: "24x7 CCTV serveiliance - your security our priority", icon: faCouch },
-                { text: "Fast reliable wifi always", icon: faShieldAlt },
-                { text: "Bio-metrics entry/exit", icon: faLock },
+                { text: "Bringing Shine to Every Corner - Daily Housekeeping", icon: faBook },
+                { text: "Fast Reliable WiFi always", icon: faShieldAlt },
+                { text: "Your Security our Priority - 24x7 CCTV Surveilliance", icon: faCouch },
+                { text: "Entry/Exit at Your Fingertips - Bio-metric Entry", icon: faLock },
+                // { text: "Your Kitchen Your Way - Fully Equipped Kitchen", icon: faLock },
             ],
         },
         {
