@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheckCircle,
+  faChessKnight,
   faWifi,
   faBolt,
   faMotorcycle,
@@ -76,7 +77,7 @@ const Feature = () => {
       title: "Seize the moment, cherish the memories",
       items: [
         { text: "Your Ultimate Fun Destination - Entertainment Zone", icon: faUsers },
-        { text: "Unleash Your Inner Champion - Playzone", icon: faDumbbell },
+        { text: "Unleash Your Inner Champion - Playzone", icon: faChessKnight },
         { text: "The Art of Pure Relaxation - Recliner to Relax", icon: faCouch },
       ],
     },
