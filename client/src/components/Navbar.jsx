@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/images/logo_3.png";
+import Logo from "../assets/images/logo_2.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -42,22 +42,22 @@ const Navbar = () => {
     }
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsScrollingUp(false);
-      } else {
-        setIsScrollingUp(true);
-      }
-      lastScrollY = currentScrollY;
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     if (currentScrollY > lastScrollY && currentScrollY > 100) {
+  //       setIsScrollingUp(false);
+  //     } else {
+  //       setIsScrollingUp(true);
+  //     }
+  //     lastScrollY = currentScrollY;
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

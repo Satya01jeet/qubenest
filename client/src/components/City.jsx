@@ -21,13 +21,13 @@ const CitySelection = () => {
   return (
     <div className="max-w-[1440px] mx-auto text-center py-8 px-4 lg:px-8">
       {/* Main Heading */}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-20 font-merriweather">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 font-merriweather">
         We serve in your city - Bangalore
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-32">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-32">
         {/* Image Section */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mb-8 md:mb-0">
           <img
             src={blr}
             alt="Bangalore"
@@ -37,7 +37,9 @@ const CitySelection = () => {
 
         {/* Text and Dropdown Section */}
         <div className="text-left font-merriweather">
-          <h3 className="text-4xl font-bold mb-4 text-amber-500">We are Located at :-</h3>
+          <h3 className="text-2xl md:text-4xl font-bold mb-4 text-amber-500">
+            We are Located at :-
+          </h3>
           <div className="mb-6">
             <select
               id="area-select"
