@@ -9,7 +9,7 @@ import City from './components/City';
 import Feature from './components/Feature';
 import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
-import Contact from './components/Contact';
+import CallButton from './components/CallButton';
 import Rooms from './components/Rooms';
 import LocationSection from './components/Location';
 import PrivacyPolicy from './components/PrivacyPolicy'; // Import the PrivacyPolicy component
@@ -33,6 +33,7 @@ function App() {
               <TourSection />
               <Testimonial />
               <LocationSection />
+              <CallButton />
             </>
           } 
         />
