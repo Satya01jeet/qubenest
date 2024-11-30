@@ -9,7 +9,7 @@ import City from './components/City';
 import Feature from './components/Feature';
 import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
-import Contact from './components/Contact';
+import CallButton from './components/CallButton';
 import Rooms from './components/Rooms';
 import Card from './components/Card'; // Import the Card component
 import LocationSection from './components/Location';
@@ -34,6 +34,7 @@ function App() {
               <TourSection />
               <Testimonial />
               <LocationSection />
+              <CallButton />
             </>
           } 
         />
