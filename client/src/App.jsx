@@ -11,8 +11,9 @@ import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Rooms from './components/Rooms';
+import Card from './components/Card'; // Import the Card component
 import LocationSection from './components/Location';
-import PrivacyPolicy from './components/PrivacyPolicy'; // Import the PrivacyPolicy component
+import PrivacyPolicy from './components/PrivacyPolicy'; 
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
 
@@ -40,12 +41,18 @@ function App() {
         {/* Rooms Page */}
         <Route path="/rooms" element={<Rooms />} />
 
+        {/* Card Page */}
+        <Route path="/explore-rooms" element={<Card />} /> {/* Add route for Card */}
+
         {/* Privacy Policy Page */}
         <Route path="/privacy" element={<PrivacyPolicy />} />
-      <Route path="/refund" element={<RefundCancellationPolicy/>}/>
-      <Route path="/tnc" element={<Termsandcondition/>}/>
+        
+        {/* Refund and Cancellation Policy Page */}
+        <Route path="/refund" element={<RefundCancellationPolicy />} />
+        
+        {/* Terms and Conditions Page */}
+        <Route path="/tnc" element={<Termsandcondition />} />
       </Routes>
-      
       
       <Footer />
     </Router>
