@@ -95,7 +95,7 @@ const Feature = () => {
   ];
 
   return (
-    <div className="space-y-4 my-20 ">
+    <div className="space-y-4 my-10 ">
       {features.map((feature) => (
         <div
           key={feature.id}
@@ -114,7 +114,7 @@ const Feature = () => {
 
           {/* Text section */}
           <div className="flex flex-col md:w-1/2 items-center">
-            <h2 className="text-2xl md:text-4xl mb-8 font-bold text-center">
+            <h2 className="text-2xl md:text-4xl mb-8 font-bold text-center font-merriweather">
               {feature.title}
             </h2>
             <div className="space-y-4">

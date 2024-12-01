@@ -59,15 +59,12 @@ const HeroSection = () => {
       toggleCallbackModal();
     }
   };
-  
-  
-
-  
-
   return (
     <div className="flex flex-col md:flex-row justify-center pt-24 px-8">
       {/* Text Section */}
       <div className="flex flex-col md:mt-16 md:w-1/2">
+
+        {/* Text */}
         <div className="space-y-6 md:ml-24 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-merriweather">
             A <span className="text-amber-400">Home</span>
@@ -86,7 +83,11 @@ const HeroSection = () => {
           </button>
         </div>
 
-        <TextSlideShow />
+        {/* call us section  */}
+        <div className='ml-24 text-ledt mt-12 hidden md:block'>
+          <p className='text-2xl font-bold text-gray-700'>or <span className='text-amber-400'>Call</span> us at</p>
+          <p className='text-5xl font-extrabold text-amber-400'>+91-7619636239</p>
+        </div>
       </div>
 
       {/* Image Section */}
