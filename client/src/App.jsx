@@ -32,7 +32,6 @@ function App() {
               <Feature />
               <TourSection />
               <Testimonial />
-              <LocationSection />
               <CallButton />
             </>
           } 

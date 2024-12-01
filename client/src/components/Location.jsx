@@ -29,7 +29,7 @@ const LocationSection = () => {
           {/* Map Container */}
           <div className="rounded-xl overflow-hidden shadow-lg h-[450px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.922130102179!2d77.62170647507769!3d13.040628487281085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17000597ace5%3A0x6f371714c45f5873!2sQubenest%20Elite%20Co%20living%20PG%20Near%20Manyata%20Tech%20Park!5e0!3m2!1sen!2sin!4v1731317795645!5m2!1sen!2sin"
+              src="https://www.google.com/maps/d/embed?mid=1Ql4Wmd1IHQaAqedbj41Zay__3NNn2pQ&ehbc=2E312F"
               className="w-full h-full"
               style={{ border: 0 }}
               allowFullScreen=""
