@@ -44,7 +44,7 @@ const CitySelection = () => {
     <div id='city-section' className="flex flex-col md:flex-row justify-center my-10 items-center px-10 md:px-16 gap-2 space-y-2">
       <div className="flex flex-col space-y-2 items-center">
         {/* Main Heading */}
-        <p className="text-3xl md:text-5xl font-bold mb-4 font-merriweather">
+        <p className="text-3xl text-center md:text-5xl font-bold mb-4 font-merriweather">
           We serve in your city - <span className="text-amber-400">Bangalore</span>
         </p>
 
