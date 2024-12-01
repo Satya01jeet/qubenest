@@ -21,7 +21,7 @@ const Rooms = () => {
       feature: ["Mini Fridge", "Single"],
       rating: "4.5",
       reviews: 102,
-      images: [Room1, Room2, Room3],
+      images: [Room1, Room2],
     },
     {
       title: "Single Sharing Super Deluxe Room",
@@ -31,7 +31,7 @@ const Rooms = () => {
       feature: ["AC", "Single"],
       rating: "4.3",
       reviews: 89,
-      images: [Room2, Room3, Room1],
+      images: [Room2, Room1],
     },
     {
       title: "Double Sharing Deluxe Room",
@@ -41,7 +41,7 @@ const Rooms = () => {
       feature: ["AC", "Double"],
       rating: "4.6",
       reviews: 120,
-      images: [Room3, Room1, Room2],
+      images: [Room1, Room2],
     },
     {
       title: "Double Sharing Super Deluxe Room",
@@ -51,7 +51,7 @@ const Rooms = () => {
       feature: ["Mini Fridge", "Double"],
       rating: "4.2",
       reviews: 98,
-      images: [Room1, Room2, Room3],
+      images: [Room1, Room2],
     },
   ];
 

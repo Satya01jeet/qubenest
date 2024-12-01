@@ -28,13 +28,13 @@ const HeroSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     setIsSubmitting(true);
-  
+
     const { name, number, email } = formData;  // Destructure the values from formData
-    
+
     console.log("Form Data: ", { name, number, email }); // Log to verify data structure
-  
+
     try {
       const response = await fetch("http://localhost:3001/user/callback", {
         method: "POST",
@@ -43,15 +43,18 @@ const HeroSection = () => {
         },
         body: JSON.stringify({ name, number, email }), // Send the form data
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to submit form data.");
       }
-  
+
       // Handle successful response
       const responseData = await response.json();
       setSuccessMessage(responseData.message); // Assuming server returns a message field
-  
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, 3000);
+
     } catch (error) {
       console.error("Error from server: ", error);
     } finally {
@@ -103,50 +106,69 @@ const HeroSection = () => {
       {/* Callback Modal */}
       {isCallbackModalOpen && (
         <div
-          className="fixed inset-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-50 z-50"
-          onClick={toggleCallbackModal}
+          className="fixed inset-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-70 z-50"
+          onClick={toggleCallbackModal} // Close modal when clicking outside content
         >
           <div
-            className="bg-white rounded-lg p-8 w-full max-w-sm relative shadow-lg"
-            onClick={(e) => e.stopPropagation()}
+            className="relative bg-gradient-to-br from-amber-100 via-white to-amber-50 rounded-xl p-8 w-full max-w-sm shadow-2xl transform transition-all duration-500 scale-95 hover:scale-100"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
             role="dialog"
             aria-labelledby="callback-title"
             aria-modal="true"
           >
-            <h2 id="callback-title" className="text-2xl font-bold mb-6 text-center">
+            <button
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 transition"
+              onClick={toggleCallbackModal}
+              aria-label="Close Modal"
+            >
+              ✕
+            </button>
+
+            <h2
+              id="callback-title"
+              className="text-3xl font-extrabold text-gray-800 text-center mb-6"
+            >
               Enter Your Details
             </h2>
+
+            <p className="text-gray-500 text-center mb-6">
+              Let us know how we can reach out to you. We'll contact you shortly!
+            </p>
+
             <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
-                name="name"
+                placeholder="Your Full Name"
+                className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-amber-300"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="Name"
-                className="border border-gray-300 rounded px-4 py-2"
+                name="name"
                 required
+                aria-label="Name"
               />
               <input
-                type="tel"
-                name="number"
+                type="number"
+                placeholder="Your Mobile Number"
+                className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-amber-300"
                 value={formData.number}
                 onChange={handleInputChange}
-                placeholder="Mobile Number"
-                className="border border-gray-300 rounded px-4 py-2"
+                name="number"
                 required
+                aria-label="Mobile Number"
               />
               <input
                 type="email"
-                name="email"
+                placeholder="Your Email Address"
+                className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring focus:ring-amber-300"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="Email"
-                className="border border-gray-300 rounded px-4 py-2"
+                name="email"
                 required
+                aria-label="Email"
               />
               <button
                 type="submit"
-                className="bg-black text-white rounded-md py-2 px-4 hover:bg-gray-800 transition"
+                className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
@@ -155,6 +177,7 @@ const HeroSection = () => {
           </div>
         </div>
       )}
+
 
       {/* Success Message */}
       {successMessage && (

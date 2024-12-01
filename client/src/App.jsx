@@ -16,6 +16,7 @@ import LocationSection from './components/Location';
 import PrivacyPolicy from './components/PrivacyPolicy'; 
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
+import Whatsapp from './components/Whatsapp';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <TourSection />
               <Testimonial />
               <CallButton />
+              <Whatsapp />
             </>
           } 
         />
