@@ -37,9 +37,9 @@ const CitySelection = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-center my-20 items-start md:items-start px-10 md:px-32 gap-2 space-y-2 ">
-      <div className='flex flex-col md:w-1/2 space-y-2'> 
-        <p className="text-lg md:text-3xl font-medium text-gray-500">Experience the difference with <span className="text-5xl md:text-6xl font-sans font-bold text-gold">Qubenest
+    <div className="flex flex-col md:flex-row justify-center my-20 items-center md:items-start px-10 md:px-32 gap-2 space-y-2">
+      <div className='flex flex-col md:w-1/2 space-y-2 md:items-start items-center'> 
+        <p className="text-lg md:text-3xl font-medium text-gray-500 md:text-left text-center">Experience the difference with <span className="text-5xl md:text-6xl font-sans font-bold text-gold">Qubenest
         </span> </p>
 
         <div className='flex flex-col relative'>
