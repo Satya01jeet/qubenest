@@ -153,8 +153,6 @@ const Rooms = () => {
           </div>
         </div>
       </div>
-      <RoomFeature/>
-      <RoomImage/>
     </div>
   );
 };

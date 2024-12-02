@@ -51,7 +51,7 @@ const CitySelection = () => {
                 Select an area
               </option>
               <option value="area1">Manyata Tech Park</option>
-              <option value="area2">White Field</option>
+              <option value="area2">WhiteField</option>
               <option value="area3">Marathahalli</option>
               <option value="area4">Indiranagar</option>
             </select>

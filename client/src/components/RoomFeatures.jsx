@@ -4,7 +4,7 @@ import { FaBath, FaTable, FaTv, FaSnowflake, FaShoePrints, FaBroom, FaTshirt, Fa
 const RoomFeatures = () => {
   const initialFeatures = [
     { icon: <FaBath />, text: "Attached Washroom" },
-    { icon: <FaBox />, text: "Cupboard" }, // FaBox used as a substitute
+    { icon: <FaBox />, text: "Cupboard" }, 
     { icon: <FaTable />, text: "Work Station" },
     { icon: <FaSnowflake />, text: "Curtains/Blinds" },
     { icon: <FaShoePrints />, text: "Shoe Rack" },
@@ -21,7 +21,7 @@ const RoomFeatures = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg mt-6">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg mt-6">
       <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">
         Basic Amenities
       </h2>
