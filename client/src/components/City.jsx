@@ -26,9 +26,9 @@ const CitySelection = () => {
     setArea(area);
     setIsDropDownOpen(false);
     // Navigate based on selection
-    if (area === 'Qubenest Elite') {
+    if (area === 'BLR - Manyata-Elite') {
       navigate('/rooms/elite');
-    } else if (area === 'Qubenest Splendour') {
+    } else if (area === 'BLR - Manyata-Splendour') {
       navigate('/rooms');
     }
   };
