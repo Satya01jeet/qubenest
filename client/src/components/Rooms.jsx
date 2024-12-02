@@ -7,7 +7,7 @@ import { FaSnowflake, FaFan, FaTv, FaTshirt, FaBox, FaBed } from "react-icons/fa
 
 import Room1 from "../assets/images/room1.png";
 import Room2 from "../assets/images/room2.png";
-import Room3 from "../assets/images/saurabh.jpg";
+import Room3 from "../assets/images/book.png";
 
 import RoomFeatures from "./RoomFeatures";
 import RoomImage from "./RoomImage";

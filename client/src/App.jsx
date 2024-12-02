@@ -11,7 +11,7 @@ import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
 import CallButton from './components/CallButton';
 import Rooms from './components/Rooms';
-import RoomElite from './components/RoomElite'; // Import RoomElite component
+import RoomElite from './components/Roomelite'; 
 import LocationSection from './components/Location'; 
 import PrivacyPolicy from './components/PrivacyPolicy'; 
 import RefundCancellationPolicy from './components/RefundPolicy';
