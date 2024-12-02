@@ -25,23 +25,27 @@ const CitySelection = () => {
   const handleAreaSelection = (area) => {
     setArea(area);
     setIsDropDownOpen(false);
-    navigate(`/rooms?area=${area}`); // Navigate to the rooms page
+    // Navigate based on selection
+    if (area === 'Qubenest Elite') {
+      navigate('/rooms/elite');
+    } else if (area === 'Qubenest Splendour') {
+      navigate('/rooms');
+    }
   };
 
   const areas = [
     {
       id: 1,
-      buildingName: 'Qubenest Elite',
-      iframe: 'https://www.google.com/maps/d/embed?mid=1Ql4Wmd1IHQaAqedbj41Zay__3NNn2pQ&ehbc=2E312F'
+      buildingName: 'BLR - Manyata-Elite',
     },
     {
       id: 2,
-      buildingName: 'Qubenest Splendour'
+      buildingName: 'BLR - Manyata-Splendour',
     }
   ];
 
   return (
-    <div id='city-section' className="flex flex-col md:flex-row justify-center my-10 items-center px-10 md:px-16 gap-2 space-y-2">
+    <div id="city-section" className="flex flex-col md:flex-row justify-center my-10 items-center px-10 md:px-16 gap-2 space-y-2">
       <div className="flex flex-col space-y-2 items-center">
         {/* Main Heading */}
         <p className="text-3xl text-center md:text-5xl font-bold mb-4 font-merriweather">

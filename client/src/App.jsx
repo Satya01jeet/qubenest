@@ -11,8 +11,8 @@ import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
 import CallButton from './components/CallButton';
 import Rooms from './components/Rooms';
-import Card from './components/Card'; // Import the Card component
-import LocationSection from './components/Location';
+import RoomElite from './components/RoomElite'; // Import RoomElite component
+import LocationSection from './components/Location'; 
 import PrivacyPolicy from './components/PrivacyPolicy'; 
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
@@ -43,8 +43,11 @@ function App() {
         {/* Rooms Page */}
         <Route path="/rooms" element={<Rooms />} />
 
-        {/* Card Page */}
-        <Route path="/explore-rooms" element={<Card />} /> {/* Add route for Card */}
+        {/* RoomElite Page */}
+        <Route path="/rooms/elite" element={<RoomElite />} />
+
+        {/* Location Section (if any) */}
+        <Route path="/location" element={<LocationSection />} />
 
         {/* Privacy Policy Page */}
         <Route path="/privacy" element={<PrivacyPolicy />} />

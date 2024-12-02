@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         gold: '#FFD700',
+        primary: '#4CAF50',
       },
       fontFamily: {
         'winterSelfie': ['winterSelfie', 'sans-serif'],
