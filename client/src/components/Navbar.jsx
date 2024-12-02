@@ -100,12 +100,6 @@ const Navbar = () => {
           <a href="#schedule" className="hover:text-zinc-200 transition" onClick={handleScheduleVisit}>
             Schedule a Visit
           </a>
-          <button
-            className="border border-black rounded-md py-1 px-4 hover:scale-105 active:scale-100 transition"
-            onClick={toggleLoginModal}
-          >
-            <a href="#login">Login</a>
-          </button>
         </div>
 
         {/* Mobile Menu */}

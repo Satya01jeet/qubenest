@@ -1,67 +1,88 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import blr from '../assets/images/blr2.jpg';
 
 const CitySelection = () => {
   const navigate = useNavigate();
-  const [selectedArea, setSelectedArea] = useState('');
+  const [area, setArea] = useState('Select');
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const dropdownRef = useRef(null); // Ref for dropdown container
 
-  const handleAreaChange = (event) => {
-    setSelectedArea(event.target.value);
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropDownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleAreaSelection = (area) => {
+    setArea(area);
+    setIsDropDownOpen(false);
+    navigate(`/rooms?area=${area}`); // Navigate to the rooms page
   };
 
-  const openRoomsPage = () => {
-    if (selectedArea) {
-      navigate(`/rooms?area=${selectedArea}`);
-    } else {
-      alert('Please select an area.');
+  const areas = [
+    {
+      id: 1,
+      buildingName: 'Qubenest Elite',
+      iframe: 'https://www.google.com/maps/d/embed?mid=1Ql4Wmd1IHQaAqedbj41Zay__3NNn2pQ&ehbc=2E312F'
+    },
+    {
+      id: 2,
+      buildingName: 'Qubenest Splendour'
     }
-  };
+  ];
 
   return (
-    <div className="max-w-[1440px] mx-auto text-center py-8 px-4 lg:px-8">
-      {/* Main Heading */}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 font-merriweather">
-        We serve in your city - Bangalore
-      </h2>
+    <div id='city-section' className="flex flex-col md:flex-row justify-center my-10 items-center px-10 md:px-16 gap-2 space-y-2">
+      <div className="flex flex-col space-y-2 items-center">
+        {/* Main Heading */}
+        <p className="text-3xl text-center md:text-5xl font-bold mb-4 font-merriweather">
+          We serve in your city - <span className="text-amber-400">Bangalore</span>
+        </p>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-32">
         {/* Image Section */}
-        <div className="flex-shrink-0 mb-8 md:mb-0">
+        <div className="flex-shrink-0 mb-10">
           <img
             src={blr}
             alt="Bangalore"
-            className="w-[300px] md:w-[400px] rounded-lg shadow-lg object-cover"
+            className="w-[300px] md:w-[500px] rounded-lg shadow-lg object-cover"
           />
         </div>
 
-        {/* Text and Dropdown Section */}
-        <div className="text-left font-merriweather">
-          <h3 className="text-2xl md:text-4xl font-bold mb-4 text-amber-500">
-            We are Located at :-
-          </h3>
-          <div className="mb-6">
-            <select
-              id="area-select"
-              value={selectedArea}
-              onChange={handleAreaChange}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400"
-            >
-              <option value="" disabled>
-                Select an area
-              </option>
-              <option value="area1">Manyata Tech Park</option>
-              <option value="area2">WhiteField</option>
-              <option value="area3">Marathahalli</option>
-              <option value="area4">Indiranagar</option>
-            </select>
-          </div>
+        {/* Dropdown */}
+        <div className="flex flex-col relative" ref={dropdownRef}>
+          {/* Dropdown Button */}
           <button
-            onClick={openRoomsPage}
-            className="w-full md:w-auto px-6 py-3 bg-yellow-400 text-black font-medium rounded-lg shadow-md hover:bg-yellow-500 transition-colors duration-300"
+            onClick={() => setIsDropDownOpen((prev) => !prev)}
+            className="w-56 md:w-96 text-black border rounded-md px-4 py-2 mt-4 hover:bg-gray-100 text-sm text-left flex justify-between items-center"
           >
-            View Rooms
+            {area} <span>&#x25BC;</span>
           </button>
+
+          {/* Dropdown Menu */}
+          {isDropDownOpen && (
+            <div className="absolute left-0 mt-14 w-56 md:w-96 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+              <ul className="py-1 text-gray-700">
+                {areas.map((item) => (
+                  <li
+                    key={item.id}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => handleAreaSelection(item.buildingName)}
+                  >
+                    {item.buildingName}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -95,26 +95,26 @@ const Feature = () => {
   ];
 
   return (
-    <div className="space-y-4 my-20">
+    <div className="space-y-4 my-10 ">
       {features.map((feature) => (
         <div
           key={feature.id}
           className={`flex flex-col ${
-            feature.id % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-          } md:items-center md:justify-evenly shadow-lg rounded-lg mx-4 p-4 my-10`}
+            feature.id % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+          } md:items-center md:justify-evenly md:shadow-none shadow-lg rounded-lg mx-4 p-4 my-10`}
         >
           {/* Image section */}
-          <div className="w-full md:w-1/2 px-10 py-5">
+          <div className="w-full md:w-1/2 px-10 py-5 flex justify-center">
             <img
               src={feature.image}
               alt={feature.alt}
-              className="rounded-ss-[50px] rounded-ee-[50px]"
+              className="rounded-ss-[50px] rounded-ee-[50px] md:shadow-xl md:w-[500px]"
             />
           </div>
 
           {/* Text section */}
           <div className="flex flex-col md:w-1/2 items-center">
-            <h2 className="text-2xl md:text-3xl mb-8 font-bold text-center font-merriweather">
+            <h2 className="text-2xl md:text-4xl mb-8 font-bold text-center font-merriweather">
               {feature.title}
             </h2>
             <div className="space-y-4">
