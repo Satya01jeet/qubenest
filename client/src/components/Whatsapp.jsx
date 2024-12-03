@@ -33,7 +33,7 @@ const Whatsapp = () => {
   }, []);
 
   const handleClick = () => {
-    const phoneNumber = 9958895043; // Replace with your WhatsApp number
+    const phoneNumber = 7619636239; // Replace with your WhatsApp number
     const message = encodeURIComponent('Hello! I would like to know more.');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`,'');
   };
