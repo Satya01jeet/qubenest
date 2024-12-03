@@ -47,7 +47,7 @@ const RefundCancellationPolicy = () => {
                 For payments made via credit card, the refund will be credited to the <strong>original credit card</strong> used during the transaction.
               </li>
               <li>
-                For payments made through a payment gateway, the refund will be credited to the <strong>same account</strong> used for the payment.
+                For payments made through a payment gateway, the refund will be credited to the <strong>same account</strong> used for the payment with within 7-10 working days.
               </li>
             </ul>
           </li>
