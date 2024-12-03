@@ -17,6 +17,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
 import Whatsapp from './components/Whatsapp';
+import RoomImage from './components/RoomImage';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <HeroSection />
               <City />
               <Feature />
+              <RoomImage/>
               <TourSection />
               <Testimonial />
               <CallButton />

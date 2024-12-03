@@ -74,7 +74,7 @@ const HeroSection = () => {
             <br />
             Away From <span className="text-amber-400">Home</span>
           </h1>
-          <p className="text-gray-600 text-lg md:text-lg lg:mx-2 font-merriweather">
+          <p className="text-gray-600 text-lg md:text-lg lg:mx-2 font-merriweather italic tracking-wider">
             An accommodation that gives you the warmth of your home, familiarity of your surroundings, comfort of your
             own bed, and a sense of belonging...
           </p>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             className="mt-4 px-6 py-3 bg-amber-300 text-black rounded-lg shadow-lg hover:bg-amber-400 active:scale-95 transition ease-in-out font-semibold"
             onClick={toggleCallbackModal}
           >
-            Book a <span className="text-orange-600 font-bold text-lg">FREE</span> callback 📞
+            Book a  callback 📞
           </button>
         </div>
 

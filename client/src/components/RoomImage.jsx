@@ -16,24 +16,49 @@ const ImageSection = () => {
     { src: image4, alt: "Game Area" },
   ];
 
-  const sliderSettings = {
-    dots: true, // Show navigation dots
-    infinite: true, // Enable infinite scrolling
-    speed: 500, // Transition speed
-    slidesToShow: 3, // Show 3 images at a time
-    slidesToScroll: 1, // Scroll 1 image at a time
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 2000, // Autoplay speed in milliseconds
-    arrows: true, // Show navigation arrows
+  const firstAndThirdRowSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024, // For screens <= 1024px
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 600, // For screens <= 600px
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  const middleRowSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
         },
@@ -46,19 +71,57 @@ const ImageSection = () => {
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-800">Our Facilities</h2>
       </div>
-      <Slider {...sliderSettings}>
-        {images.map((image, index) => (
-          <div key={index} className="p-4">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-64 object-cover"
-              />
+
+      {/* First Row */}
+      <div className="mb-">
+        <Slider {...firstAndThirdRowSettings}>
+          {images.map((image, index) => (
+            <div key={index} className="p-4">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Middle Row */}
+      <div className="mb-">
+        <Slider {...middleRowSettings}>
+          {images.map((image, index) => (
+            <div key={index} className="p-4">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Third Row */}
+      <div>
+        <Slider {...firstAndThirdRowSettings}>
+          {images.map((image, index) => (
+            <div key={index} className="p-4">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
