@@ -58,7 +58,7 @@ const Room = () => {
     <div className="bg-white mt-16">
       {/* Page Heading */}
       <div className="text-center bg-amber-400 text-gray-800 py-6">
-        <h1 className="text-3xl font-bold">Building - Qubnest Elite</h1>
+        <h1 className="text-3xl font-bold">Building - Qubenest Elite</h1>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6 p-6 bg-gray-50 min-h-screen mt-4">
