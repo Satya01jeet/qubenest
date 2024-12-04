@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import saurabh from '../assets/images/saurabh.jpg';
 import arnav from '../assets/images/arnav.png';
 import saddam from '../assets/images/saddam.jpg';
-import { HiArrowCircleUp, HiArrowCircleDown } from 'react-icons/hi';
 
 const Testimonial = () => {
   const testimonials = [
@@ -29,21 +28,19 @@ const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
 
-  const nextTestimonial = () => {
-    setAnimate(true);
-    setTimeout(() => {
-      setCurrentIndex((index) => (index === testimonials.length - 1 ? 0 : index + 1));
-      setAnimate(false);
-    }, 300); // Duration matches animation duration
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true); // Trigger animation
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+        );
+        setAnimate(false); // Reset animation after transition
+      },500); // Animation duration matches CSS transition
+    }, 4000); // 3-second interval for testimonial rotation
 
-  const prevTestimonial = () => {
-    setAnimate(true);
-    setTimeout(() => {
-      setCurrentIndex((index) => (index === 0 ? testimonials.length - 1 : index - 1));
-      setAnimate(false);
-    }, 300); // Duration matches animation duration
-  };
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [testimonials.length]);
 
   return (
     <div className="flex flex-col md:flex-row justify-around px-4 md:px-24 my-4 md:my-28 space-y-8 md:space-y-0">
@@ -61,34 +58,30 @@ const Testimonial = () => {
         style={{ minHeight: '300px' }}
       >
         {/* Profile Picture and Testimonial Text */}
-        <div key={currentIndex} className="flex flex-col items-center gap-4">
-          {testimonials[currentIndex].image && (
-            <img
-              src={testimonials[currentIndex].image}
-              alt={testimonials[currentIndex].name}
-              className="rounded-full w-20 h-20 md:w-24 md:h-24"
-            />
-          )}
+        {testimonials[currentIndex] && (
+          <div key={currentIndex} className="flex flex-col items-center gap-4">
+            {testimonials[currentIndex].image && (
+              <img
+                src={testimonials[currentIndex].image}
+                alt={testimonials[currentIndex].name}
+                className="rounded-full w-20 h-20 md:w-24 md:h-24"
+              />
+            )}
 
-          {/* Text, Name, and Position */}
-          <div className="text-center">
-            <p className="text-md md:text-lg text-gray-600 font-light italic leading-relaxed">
-              "{testimonials[currentIndex].text}"
-            </p>
-            <p className="text-lg md:text-xl font-semibold text-black mt-4">{testimonials[currentIndex].name}</p>
-            <p className="text-sm text-gray-500">{testimonials[currentIndex].position}</p>
+            {/* Text, Name, and Position */}
+            <div className="text-center">
+              <p className="text-md md:text-lg text-gray-600 font-light italic leading-relaxed">
+                "{testimonials[currentIndex].text}"
+              </p>
+              <p className="text-lg md:text-xl font-semibold text-black mt-4">
+                {testimonials[currentIndex].name}
+              </p>
+              <p className="text-sm text-gray-500">
+                {testimonials[currentIndex].position}
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Pagination Arrows */}
-      <div className="flex flex-col items-center justify-center space-y-4">
-        <button onClick={prevTestimonial} className="rounded-full hover:scale-110 transition-all">
-          <HiArrowCircleUp size={30} />
-        </button>
-        <button onClick={nextTestimonial} className="rounded-full hover:scale-110 transition-all">
-          <HiArrowCircleDown size={30} />
-        </button>
+        )}
       </div>
     </div>
   );
