@@ -82,7 +82,7 @@ const Checkout = () => {
 
                 {/* Payment Button */}
                 <button className="mt-6 bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700">
-                    Pay ₹999 via Paytm
+                    Pay ₹999
                 </button>
             </main>
         </div>

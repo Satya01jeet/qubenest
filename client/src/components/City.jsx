@@ -131,7 +131,7 @@ const City = () => {
       </div>
 
       {/* Explore Rooms Button */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <div className="flex justify-center mt-8">
         <button
           onClick={handleExploreRooms}
           className="bg-amber-500 text-white px-6 py-3 rounded-lg shadow-lg text-xl font-bold hover:bg-amber-700 transition duration-300"
