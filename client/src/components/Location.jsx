@@ -1,110 +1,99 @@
-import React from 'react';
-import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
+import React from "react";
 
-const LocationSection = () => {
-  const businessInfo = {
-    name: "Qubenest Elite Co-living PG",
-    address: "Site No-16, Bus point, Survey No -141, Service Rd, Nagawara, Bengaluru, Karnataka 560045",
-    phone: "+91 7619636239", 
-    email: "contact@qubenest.com", // Replace with actual email
-    hours: [
-      "Opens 365 Days - 24*7",
-      
-    ],
-  };
+const Location = () => {
+  const locations = [
+    {
+      name: "ELITE",
+      address:
+        "Manyata Tech Park Road, 560045 Bangalore, India",
+      googleMapsLink: "#",
+      packages: ["SOLO LIVING", "CO-LIVING"],
+      buttonText: "VIEW ROOMS",
+      comingSoon: false,
+    },
+    {
+      name: "SPLENDOUR",
+      address:
+        "Manyata Tech Park Road, 560045 Bangalore, India",
+      googleMapsLink: "#",
+      packages: ["SINGLE SHARING", "TWIN SHARING",],
+      buttonText: "VIEW ROOMS",
+      comingSoon: false,
+    },
+  ];
 
   return (
-    <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-merriweather font-bold text-gray-900 mb-4">
-            Our Location
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Conveniently located near Manyata Tech Park, making your commute a breeze!
-          </p>
-        </div>
+    <div className="bg-gradient-to-b from-white to-yellow-300 text-white py-16 px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Map Container */}
-          <div className="rounded-xl overflow-hidden shadow-lg h-[450px]">
-            <iframe
-              src="https://www.google.com/maps/d/embed?mid=1Ql4Wmd1IHQaAqedbj41Zay__3NNn2pQ&ehbc=2E312F"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold text-gray-900 mb-4 font-merriweather">Our Locations</h1>
+        <p className="text-lg text-gray-600 font-merriweather">
+          Explore premium properties tailored for you.
+        </p>
+      </div>
 
-          {/* Contact Information */}
-          <div className="bg-gray-50 rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              {businessInfo.name}
-            </h3>
+      {/* Locations */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {locations.map((location, index) => (
+          <div
+            key={index}
+            className="bg-gray-50 rounded-lg p-6 text-center shadow-lg transform hover:scale-105 transition duration-300"
+          >
+            {/* Location Name */}
+            <h2 className="text-3xl font-semibold text-gray-900 mb-2" style={{ fontFamily: "Poppins, sans-serif" }}>{location.name}</h2>
+            
+            {/* Location Address */}
+            <p className="text-sm text-gray-800 mb-6" style={{ fontFamily: "Poppins, sans-serif" }}>{location.address}</p>
 
-            <div className="space-y-6">
-              {/* Address */}
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-medium text-gray-900">Address</h4>
-                  <p className="text-gray-600">{businessInfo.address}</p>
-                </div>
-              </div>
+            {/* Google Maps Link */}
+            <a
+              href={location.googleMapsLink}
+              className="text-teal-400 hover:text-teal-500 text-sm font-medium mb-4 block"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              Open in Google Maps
+            </a>
 
-              {/* Business Hours */}
-              <div className="flex items-start space-x-3">
-                <Clock className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-medium text-gray-900">Business Hours</h4>
-                  <ul className="text-gray-600 space-y-1">
-                    {businessInfo.hours.map((hours, index) => (
-                      <li key={index}>{hours}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Contact Info */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-6 h-6 text-gold" />
-                  <a
-                    href={`tel:${businessInfo.phone}`}
-                    className="text-gray-600 hover:text-blue-600"
+            {/* Available Packages */}
+            {!location.comingSoon && (
+              <div className="flex flex-col items-center gap-1 mb-6">
+                {location.packages.map((pkg, i) => (
+                  <p
+                    key={i}
+                    className="text-gray-700 text-sm flex items-center"
+                    style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    {businessInfo.phone}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-6 h-6 text-gold" />
-                  <a
-                    href={`mailto:${businessInfo.email}`}
-                    className="text-gray-600 hover:text-blue-600"
-                  >
-                    {businessInfo.email}
-                  </a>
-                </div>
+                    ✅ {pkg}
+                  </p>
+                ))}
               </div>
+            )}
 
-              {/* Get Directions Button */}
-              <a
-                href="https://goo.gl/maps/actual_location_link" // Replace with actual Google Maps link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-black bg-gold rounded-lg hover:bg-yellow-500 transition-colors duration-200"
-              >
-                <Navigation className="w-5 h-5 mr-2" />
-                Get Directions
-              </a>
-            </div>
+            {/* Button */}
+            <button
+              className={`${
+                location.comingSoon
+                  ? "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "bg-teal-600 text-white hover:bg-teal-700"
+              } py-2 px-6 rounded-md font-medium text-sm transition duration-300`}
+              disabled={location.comingSoon}
+            >
+              {location.buttonText}
+            </button>
           </div>
-        </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-10">
+        <p className="text-gray-600 " style={{ fontFamily: "Poppins, sans-serif" }}>OR</p>
+        <p className="text-2xl font-semibold font-merriweather text-black">
+          Call us now at <span className="text-Black font-merriweather">+91-7619636239</span>
+        </p>
       </div>
     </div>
   );
 };
 
-export default LocationSection;
+export default Location;

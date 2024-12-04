@@ -74,7 +74,7 @@ const HeroSection = () => {
             <br />
             Away From <span className="text-amber-400">Home</span>
           </h1>
-          <p className="text-gray-600 text-lg md:text-lg lg:mx-2 font-merriweather italic tracking-wider">
+          <p className="text-gray-600 text-lg md:text-lg lg:mx-2 font-sans italic tracking-normal">
             An accommodation that gives you the warmth of your home, familiarity of your surroundings, comfort of your
             own bed, and a sense of belonging...
           </p>
@@ -99,7 +99,7 @@ const HeroSection = () => {
           <img src={bg} alt="Background decoration" />
         </div>
         <div className="w-[500px] md:absolute md:top-[-55px] md:left-[10px] md:w-[600px]">
-          <img src={hero_img} alt="Traveler with luggage" className="w-[700px]" />
+          <img src={hero_img} alt="Traveler with luggage" className="w-[600px]" />
         </div>
       </div>
 

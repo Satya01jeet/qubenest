@@ -1,29 +1,48 @@
 import React from 'react';
-import { FaBath, FaTable, FaTv, FaSnowflake, FaShoePrints, FaBroom, FaTshirt, FaBox, FaFan, FaConciergeBell, FaSmileBeam } from 'react-icons/fa';
+import { AiOutlineDesktop } from 'react-icons/ai';
+import { 
+  FaBath, FaTv, FaSnowflake, FaDoorClosed, FaChair, FaRulerHorizontal, FaSocks, 
+  FaBroom, FaWarehouse, FaShower, FaBed, FaRegSquare, FaUtensils, FaWifi, 
+  FaDumbbell, FaUserShield, FaMusic, FaGamepad, FaBolt, FaLock, FaConciergeBell, FaPlug
+} from 'react-icons/fa';
 
 const RoomFeatures = () => {
   const initialFeatures = [
     { icon: <FaBath />, text: "Attached Washroom" },
-    { icon: <FaBox />, text: "Cupboard" }, 
-    { icon: <FaTable />, text: "Work Station" },
-    { icon: <FaSnowflake />, text: "Curtains/Blinds" },
-    { icon: <FaShoePrints />, text: "Shoe Rack" },
-    { icon: <FaBroom />, text: "Daily Cleaning" }
+    { icon: <FaWarehouse />, text: "Cupboard" },
+    { icon: <FaBed />, text: "Double Bed" },
+    { icon: <AiOutlineDesktop />, text: "Work Station" },
+    { icon: <FaDoorClosed />, text: "Curtains/Blinds" },
+    { icon: <FaSocks />, text: "Shoe Rack" },
+    { icon: <FaBroom />, text: "Bedside Table with Drawer" },
+    { icon: <FaRulerHorizontal />, text: "Wall Mounted Racks" },
+    { icon: <FaShower />, text: "Geyser" },
+    { icon: <FaChair />, text: "Mirror" },
+    { icon: <FaSnowflake />, text: "Mini Fridge" },
+    { icon: <FaTv />, text: "Television" },
+    { icon: <FaRegSquare />, text: "Pillow & Cushions" },
+    { icon: <FaBed />, text: "Bedsheet with Pillow Covers & Blankets" },
   ];
 
   const basicNeedsFeatures = [
-    { icon: <FaTshirt />, text: "Laundry Service" },
-    { icon: <FaBox />, text: "Mini-Fridge" },
-    { icon: <FaTv />, text: "Television" },
-    { icon: <FaFan />, text: "Air Conditioned" },
-    { icon: <FaConciergeBell />, text: "24hrs Front Desk" },
-    { icon: <FaSmileBeam />, text: "Mirror" }
+    { icon: <FaPlug />, text: "Washing Machine" },
+    { icon: <FaBolt />, text: "RO Water for Drinking" },
+    { icon: <FaUtensils />, text: "Fully Equipped Kitchen for Self Cooking" },
+    { icon: <FaBroom />, text: "Daily Housekeeping" },
+    { icon: <FaConciergeBell />, text: "24 X 7 Security" },
+    { icon: <FaLock />, text: "Biometric Entry" },
+    { icon: <FaBolt />, text: "Power Backup" },
+    { icon: <FaWifi />, text: "Free High-Speed Internet" },
+    { icon: <FaDumbbell />, text: "Fully Equipped Gym" },
+    { icon: <FaUserShield />, text: "Front Desk" },
+    { icon: <FaMusic />, text: "Music System for Entertainment" },
+    { icon: <FaGamepad />, text: "Playzone" },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg mt-6">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">
-        Basic Amenities
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 bg-white mt-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center font-merriweather">
+        Basic Amenities in the Room
       </h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg text-gray-700">
@@ -38,9 +57,9 @@ const RoomFeatures = () => {
         ))}
       </div>
 
-      {/* <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-6 mb-4 text-center">
-        Room Features
-      </h2> */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-6 mb-4 text-center font-merriweather">
+        Building Facilities
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg text-gray-700 mt-4">
         {basicNeedsFeatures.map((feature, index) => (

@@ -11,21 +11,25 @@ import TourSection from './components/TourSection';
 import Testimonial from './components/Testimonial';
 import CallButton from './components/CallButton';
 import Rooms from './components/Rooms';
-import RoomElite from './components/Roomelite'; 
-import LocationSection from './components/Location'; 
-import PrivacyPolicy from './components/PrivacyPolicy'; 
+import RoomElite from './components/Roomelite';
+import LocationSection from './components/Location';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundCancellationPolicy from './components/RefundPolicy';
 import Termsandcondition from './components/Termsandcondition';
 import Whatsapp from './components/Whatsapp';
 import RoomImage from './components/RoomImage';
+import Location from './components/Location';
+import Checkout from './components/Checkout'; // Importing Checkout component
 
 function App() {
   return (
     <Router>
+      {/* Navbar */}
       <Navbar />
-      
+
+      {/* Routes */}
       <Routes>
-        {/* Main Home Page */}
+        {/* Home Page */}
         <Route 
           path="/" 
           element={
@@ -33,8 +37,9 @@ function App() {
               <HeroSection />
               <City />
               <Feature />
-              <RoomImage/>
+              <RoomImage />
               <TourSection />
+              <Location />
               <Testimonial />
               <CallButton />
               <Whatsapp />
@@ -42,13 +47,13 @@ function App() {
           } 
         />
 
-        {/* Rooms Page */}
+        {/* Rooms Page for Qubenest Splendour */}
         <Route path="/rooms" element={<Rooms />} />
 
-        {/* RoomElite Page */}
-        <Route path="/rooms/elite" element={<RoomElite />} />
+        {/* RoomElite Page for Qubenest Elite */}
+        <Route path="/roomelite" element={<RoomElite />} />
 
-        {/* Location Section (if any) */}
+        {/* Location Section */}
         <Route path="/location" element={<LocationSection />} />
 
         {/* Privacy Policy Page */}
@@ -59,8 +64,12 @@ function App() {
         
         {/* Terms and Conditions Page */}
         <Route path="/tnc" element={<Termsandcondition />} />
+
+        {/* Checkout Page */}
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
-      
+
+      {/* Footer */}
       <Footer />
     </Router>
   );

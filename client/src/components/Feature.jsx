@@ -1,5 +1,6 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faChessKnight,
@@ -22,15 +23,25 @@ import {
   faFaucet,
   faHeartbeat,
   faSpa,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-import featureImage from '../assets/images/couple.png';
-import secondImage from '../assets/images/Colive1.jpg';
-import thirdImage from '../assets/images/kitchen.png';
-import fourthImage from '../assets/images/colive.png';
-import fifthImage from '../assets/images/gym1.png';
+import featureImage from "../assets/images/couple.png";
+import secondImage from "../assets/images/Colive1.jpg";
+import thirdImage from "../assets/images/kitchen.png";
+import fourthImage from "../assets/images/colive.png";
+import fifthImage from "../assets/images/gym1.png";
 
 const Feature = () => {
+  useEffect(() => {
+    ScrollReveal().reveal(".feature-section", {
+      origin: "bottom",
+      distance: "50px",
+      duration: 1000,
+      reset: true,
+      interval: 200,
+    });
+  }, []);
+
   const features = [
     {
       id: 1,
@@ -42,7 +53,7 @@ const Feature = () => {
         { text: "Luxury @Reasonable Price", icon: faHome },
         { text: "Fully Equipped Luxurious Homes", icon: faCouch },
         { text: "Loaded with Amenities for Ultimate Comfort", icon: faBolt },
-        { text: "A Perfect Stay for Perfect Pairs - Couples", icon: faHeart }, // Updated
+        { text: "A Perfect Stay for Perfect Pairs - Couples", icon: faHeart },
       ],
     },
     {
@@ -51,7 +62,7 @@ const Feature = () => {
       alt: "Entertainment space",
       title: "Where Elegance Meets Exceptional Services",
       items: [
-        { text: "Bringing Shine to Every Corner - Daily Housekeeping", icon: faBroom }, // Updated
+        { text: "Bringing Shine to Every Corner - Daily Housekeeping", icon: faBroom },
         { text: "Fast Reliable WiFi always", icon: faWifi },
         { text: "Your Security our Priority - 24x7 CCTV Surveillance", icon: faShieldAlt },
         { text: "Entry/Exit at Your Fingertips - Biometric Entry", icon: faLock },
@@ -66,8 +77,8 @@ const Feature = () => {
         { text: "Backup that Never Lets You Down - 24X7 Power Backup", icon: faBolt },
         { text: "Your Kitchen Your Way - Fully Equipped Kitchen", icon: faUtensils },
         { text: "Laundry Made Easy by You - Self Laundry", icon: faSoap },
-        { text: "Pure Water, Pure Life - Unlimited RO Water", icon: faGlassWater }, // Updated
-        { text: "Unlimited Water Supply - Around the Clock", icon: faFaucet }, // Updated
+        { text: "Pure Water, Pure Life - Unlimited RO Water", icon: faGlassWater },
+        { text: "Unlimited Water Supply - Around the Clock", icon: faFaucet },
       ],
     },
     {
@@ -88,19 +99,19 @@ const Feature = () => {
       title: "Making Your Abs Work",
       items: [
         { text: "Master Your Strength - Self Weight Training", icon: faDumbbell },
-        { text: "Heart Strong, Body Fit - Cardio Section Available", icon: faHeartbeat }, // Updated
-        { text: "Your Path to Mindful Living - Yoga Mat and Space Available", icon: faSpa }, // Updated
+        { text: "Heart Strong, Body Fit - Cardio Section Available", icon: faHeartbeat },
+        { text: "Your Path to Mindful Living - Yoga Mat and Space Available", icon: faSpa },
       ],
     },
   ];
 
   return (
-    <div className="space-y-4 my-10 ">
+    <div className="space-y-4 my-10">
       {features.map((feature) => (
         <div
           key={feature.id}
-          className={`flex flex-col ${
-            feature.id % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+          className={`feature-section flex flex-col ${
+            feature.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
           } md:items-center md:justify-evenly md:shadow-none shadow-lg rounded-lg mx-4 p-4 my-10`}
         >
           {/* Image section */}
