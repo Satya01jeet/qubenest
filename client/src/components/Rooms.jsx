@@ -7,7 +7,7 @@ import { FaSnowflake, FaFan, FaTv, FaBox, FaBed, FaArrowAltCircleUp, FaMotorcycl
 import Room1 from "../assets/images/room1.png";
 import Room2 from "../assets/images/room2.png";
 import Room3 from "../assets/images/room3.jpg";
-import Cupboard from "../assets/images/Cupboard.jpg";
+import Cupboard from "../assets/images/cupboard.jpg";
 import Splfeature from "./Splfeature";
 
 const Room = () => {
