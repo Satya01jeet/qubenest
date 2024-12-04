@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 const UserCall = require("../models/callbackRequest");
 const UserVisit = require("../models/visitRequest");
 
@@ -12,6 +13,21 @@ const callbackReq = async (req, res) => {
       .json({ message: "All fields are required: name, number, email" });
   }
 
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'qubenest.booking@gmail.com',
+      pass: 'fjjmjspnchreaneo',
+    }
+  })
+
+  const mailOptions = {
+    from: 'qubenest.booking@gmail.com',
+    to: 'qubenest.booking@gmail.com',
+    subject: 'New callback request',
+    text: `You have a new callback request from name: ${name}, number: ${number} and email: ${email}`
+  }
+
   try {
     const newUser = new UserCall({
       name,
@@ -21,9 +37,11 @@ const callbackReq = async (req, res) => {
 
     const savedDetail = await newUser.save();
     console.log("User details saved to MongoDB:", savedDetail);
+    
+    await transporter.sendMail(mailOptions);
     res
       .status(201)
-      .json({ message: "User details saved successfully!", data: savedDetail });
+      .json({ message: "Form submitted and email sent successfully.", data: savedDetail });
   } catch (error) {
     console.error("Error saving user details:", error.message);
     res
@@ -43,6 +61,21 @@ const visitReq = async (req, res) => {
       .json({ message: "All fields are required: name, number, date" });
   }
 
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'qubenest.booking@gmail.com',
+      pass: 'fjjmjspnchreaneo',
+    }
+  })
+
+  const mailOptions = {
+    from: 'qubenest.booking@gmail.com',
+    to: 'qubenest.booking@gmail.com',
+    subject: 'New visit request',
+    text: `You have a new visit request from name: ${name}, number: ${number} on  date: ${date}`,
+  }
+
   try {
     const newUser = new UserVisit({
       name,
@@ -52,6 +85,8 @@ const visitReq = async (req, res) => {
 
     const savedDetail = await newUser.save();
     console.log("User details saved to MongoDB:", savedDetail);
+
+    await transporter.sendMail(mailOptions);
     res
       .status(201)
       .json({ message: "User details saved successfully!", data: savedDetail });
