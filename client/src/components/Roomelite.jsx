@@ -12,7 +12,7 @@ import Room3 from "../assets/images/room3.jpg";
 
 import RoomFeatures from "./RoomFeatures";
 
-const Room = () => {
+const Qubenestelite = () => {
     const navigate = useNavigate(); // Initialize navigate
 
     const featureIcons = {
@@ -140,4 +140,4 @@ const Room = () => {
     );
 };
 
-export default Room;
+export default Qubenestelite;
