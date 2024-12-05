@@ -9,19 +9,19 @@ import {
 const RoomFeatures = () => {
   const initialFeatures = [
     { icon: <FaBath />, text: "Attached Washroom" },
-    { icon: <FaWarehouse />, text: "Cupboard" },
-    { icon: <FaBed />, text: "Double Bed" },
-    { icon: <AiOutlineDesktop />, text: "Work Station" },
-    { icon: <FaDoorClosed />, text: "Curtains/Blinds" },
-    { icon: <FaSocks />, text: "Shoe Rack" },
-    { icon: <FaBroom />, text: "Bedside Table with Drawer" },
-    { icon: <FaRulerHorizontal />, text: "Wall Mounted Racks" },
     { icon: <FaShower />, text: "Geyser" },
     { icon: <FaChair />, text: "Mirror" },
     { icon: <FaSnowflake />, text: "Mini Fridge" },
     { icon: <FaTv />, text: "Television" },
+    { icon: <FaBed />, text: "Double Bed" },
     { icon: <FaRegSquare />, text: "Pillow & Cushions" },
     { icon: <FaBed />, text: "Bedsheet with Pillow Covers & Blankets" },
+    { icon: <FaDoorClosed />, text: "Curtains/Blinds" },
+    { icon: <AiOutlineDesktop />, text: "Work Station" },
+    { icon: <FaWarehouse />, text: "Cupboard" },
+    { icon: <FaSocks />, text: "Shoe Rack" },
+    { icon: <FaBroom />, text: "Bedside Table with Drawer" },
+    { icon: <FaRulerHorizontal />, text: "Wall Mounted Racks" },
   ];
 
   const basicNeedsFeatures = [

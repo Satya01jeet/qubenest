@@ -19,8 +19,7 @@ import Termsandcondition from './components/Termsandcondition';
 import Whatsapp from './components/Whatsapp';
 import RoomImage from './components/RoomImage';
 import Location from './components/Location';
-import Checkout from './components/Checkout'; // Importing Checkout component
-
+import Checkout from './components/Checkout'; 
 function App() {
   return (
     <Router>

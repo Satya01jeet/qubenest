@@ -2,25 +2,25 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 
 // Importing logos - Ensure these files exist in the correct path
-import HclLogo from "../assets/companies/hcl.png";
-import InfosysLogo from "../assets/companies/infosys.png";
-import WiproLogo from "../assets/companies/wipro.png";
-import BioconLogo from "../assets/companies/biocon.png";
-import HpLogo from "../assets/companies/hp.png";
-import SiemensLogo from "../assets/companies/siemens.png";
-import TataLogo from "../assets/companies/tata.png";
-import VelankaniLogo from "../assets/companies/velankani.png";
+import Nokia from "../assets/companies/nokia.png";
+import Hilton from "../assets/companies/hilton.png";
+import HJ from "../assets/companies/hj.png";
+import EM from "../assets/companies/em.png";
+import Social from "../assets/companies/social.png";
+import MT from "../assets/companies/mt.png";
+import KTC from "../assets/companies/ktc.png";
+import Philips from "../assets/companies/philips.png";
 
 const City = () => {
   const companies = [
-    { name: "HCL Technologies", logo: HclLogo, time: "9 min" },
-    { name: "Infosys Campus", logo: InfosysLogo, time: "12 min" },
-    { name: "Velankani Campus", logo: VelankaniLogo, time: "10 min" },
-    { name: "Wipro", logo: WiproLogo, time: "13 min" },
-    { name: "BioCon", logo: BioconLogo, time: "15 min" },
-    { name: "Hewlett Packard", logo: HpLogo, time: "9 min" },
-    { name: "Siemens", logo: SiemensLogo, time: "15 min" },
-    { name: "Tata BP Solar", logo: TataLogo, time: "17 min" },
+    { name: "Nokia", logo: Nokia, time: "7 min" },
+    { name: "Hilton Hotel", logo: Hilton, time: "4 min" },
+    { name: "Philips", logo: Philips, time: "4 min" },
+    { name: "Howard Johnson", logo: HJ, time: "2 min" },
+    { name: "Elements Mall", logo: EM, time: "2 min" },
+    { name: "Social", logo: Social, time: "7 min" },
+    { name: "Manyata Tech Park", logo: MT, time: "7 min" },
+    { name: "Karle Town Centre", logo: KTC, time: "6 min" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -103,10 +103,10 @@ const City = () => {
         </div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto mt-32">
+      <div className="relative max-w-6xl mx-auto mt-[6.5rem]">
         <button
           onClick={() => handleSlideChange("prev")}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-yellow-700 transition duration-300"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-yellow-700 transition duration-300 z-10"
         >
           &lt;
         </button>
