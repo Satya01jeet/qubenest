@@ -24,7 +24,7 @@ const TourSection = () => {
     console.log("Form Data: ", { name, number, date }); // Log to verify data structure
 
     try {
-      const response = await fetch("http://localhost:3001/user/visit", {
+      const response = await fetch("http://13.232.98.230:3000/user/visit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

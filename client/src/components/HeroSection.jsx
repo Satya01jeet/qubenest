@@ -36,7 +36,7 @@ const HeroSection = () => {
     console.log("Form Data: ", { name, number, email }); // Log to verify data structure
 
     try {
-      const response = await fetch("http://localhost:3001/user/callback", {
+      const response = await fetch("http://13.232.98.230:3000/user/callback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -47,7 +47,7 @@ const Room = () => {
   useEffect(() => {
     const fetchRoomData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/rooms/${buildingName}`);
+        const response = await fetch(`http://13.232.98.230:3000/rooms/${buildingName}`);
         if (!response.ok) {
           throw new Error("Room data not found");
         }

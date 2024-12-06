@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 // Use routes
+app.get('/',(req,res) => {
+  res.send('qubenest backend');
+})
 app.use('/user', userRouter);
 app.use('/checkout', paymentRouter);
 app.use('/rooms', buildingRouter);
