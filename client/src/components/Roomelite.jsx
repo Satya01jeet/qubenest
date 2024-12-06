@@ -112,7 +112,7 @@ const Qubenestelite = () => {
 
                                 <div className="mt-4">
                                     <button
-                                        onClick={() => navigate("/checkout")} // Navigate to checkout
+                                        onClick={() => navigate(`/rooms/${"Elite"}/${listing.title}/payment`)} // Navigate to checkout
                                         className="w-full bg-amber-400 text-black text-sm font-semibold py-2 px-4 rounded hover:bg-amber-500"
                                     >
                                         Book Now

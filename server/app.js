@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 const userRouter = require('./routes/userRoutes');
 const paymentRouter = require('./routes/paymentRoutes');
+const buildingRouter = require('./routes/buildingRoutes');
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ const port = process.env.PORT || 3000;
 // Use routes
 app.use('/user', userRouter);
 app.use('/checkout', paymentRouter);
+app.use('/rooms', buildingRouter);
 
 // Connect to MongoDB using the function from db.js
 connectDB();

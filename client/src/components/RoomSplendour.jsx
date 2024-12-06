@@ -110,7 +110,7 @@ const Room = () => {
                                 <div className="mt-4">
                                     <button
                                         className="w-full bg-amber-400 text-black text-sm font-semibold py-2 px-4 rounded hover:bg-amber-500"
-                                        onClick={() => navigate("/checkout")}
+                                        onClick={() => navigate("payment")}
                                     >
                                         Book Now
                                     </button>

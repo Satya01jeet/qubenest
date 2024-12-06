@@ -27,6 +27,11 @@ const City = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("Qubenest Elite");
 
+  const routeMap = {
+    "Qubenest Elite": "/elite",
+    "Qubenest Splendour": "/splendour"
+  };
+
   const navigate = useNavigate(); // Initialize useNavigate
   const locations = ["Qubenest Elite", "Qubenest Splendour"];
   const slides = [companies.slice(0, 4), companies.slice(4)];
@@ -49,12 +54,10 @@ const City = () => {
   };
 
   const handleExploreRooms = () => {
-    if (selectedLocation === "Qubenest Elite") {
-      navigate("/roomelite"); // Navigate to RoomElite page
-    } else if (selectedLocation === "Qubenest Splendour") {
-      navigate("/rooms"); // Navigate to Rooms page
-    }
+    const locationKey = selectedLocation.replace(" ", "_").toLowerCase(); // Normalize the location string
+    navigate(`/rooms/${locationKey}`);
   };
+  
 
   return (
     <div className="bg-gradient-to-b from-white to-yellow-300 min-h-screen p-8 relative">
