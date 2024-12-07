@@ -18,23 +18,20 @@ const Room = () => {
   const [room, setRoom] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedRoomType, setSelectedRoomType] = useState("single"); // Manage selected room type (single or double)
+  const [selectedRoomType, setSelectedRoomType] = useState("single");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Manage customer details
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+
+  // Carousel images
   const carouselImages = [
-    Room1,
-    Room2,
-    Cupboard,
-    Room3,
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
+    Room1, Room2, Cupboard, Room3,
+    image1, image2, image3, image4,
+    image5, image6, image7, image8
   ];
 
   useEffect(() => {
@@ -62,6 +59,56 @@ const Room = () => {
 
     fetchRoomData();
   }, [buildingName]);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+  
+    if (name && number && email) {
+      setIsSubmitting(true);
+  
+      const amount = 999;
+      const roomData = {
+        roomType: selectedRoomType,
+        buildingName: buildingName,
+        roomTitle: room.title,
+        customerName: name,
+        customerNumber: number,
+        customerEmail: email,
+      };
+
+      const merchantUserId = `user_${number}_${Date.now()}`;
+      
+      try {
+        const response = await fetch("http://localhost:3000/payment/initiate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...roomData, amount, merchantUserId }),
+        });
+  
+        const data = await response.json();
+  
+        if (data.paymentUrl) {
+          // Redirect to PhonePe payment gateway
+          window.location.href = data.paymentUrl;
+        } else {
+          alert("Payment initiation failed");
+        }
+      } catch (error) {
+        console.error("Error during payment process", error);
+        alert("An error occurred while initiating the payment");
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      alert("Please fill in all fields.");
+    }
+  };
+  
+  
+
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -124,15 +171,15 @@ const Room = () => {
       {/* Checkout Section */}
       <div className="flex-1 p-6 bg-gray-100 rounded-md shadow-lg">
         <h2 className="text-xl font-medium text-gray-600">Checkout</h2>
-        <h2 className="text-3xl font-semibold text-gray-800">{`Book This Room - ${room.title.replace("_"," ").toUpperCase()} `}</h2>
+        <h2 className="text-3xl font-semibold text-gray-800">{`Book This Room - ${room.title.replace("_", " ").toUpperCase()} `}</h2>
 
         {/* Toggle Buttons */}
         <div className="mt-6 flex space-x-4">
           <button
             onClick={() => setSelectedRoomType("single")}
             className={`px-6 py-2 rounded-md font-semibold ${selectedRoomType === "single"
-                ? "bg-amber-500 text-white"
-                : "bg-gray-300 text-gray-700 hover:bg-gray-400"
+              ? "bg-amber-500 text-white"
+              : "bg-gray-300 text-gray-700 hover:bg-gray-400"
               }`}
           >
             Single
@@ -140,8 +187,8 @@ const Room = () => {
           <button
             onClick={() => setSelectedRoomType("double")}
             className={`px-6 py-2 rounded-md font-semibold ${selectedRoomType === "double"
-                ? "bg-amber-500 text-white"
-                : "bg-gray-300 text-gray-700 hover:bg-gray-400"
+              ? "bg-amber-500 text-white"
+              : "bg-gray-300 text-gray-700 hover:bg-gray-400"
               }`}
           >
             Double
@@ -155,6 +202,7 @@ const Room = () => {
           <span className="text-green-600 font-medium">{selectedRoom.discount}</span>
         </div>
         <p className="text-sm text-gray-600 mt-1">GST Inclusive</p>
+
         <p className="text-red-500 mt-2">{`[${room.additional_info}]`}</p>
         <ul className="text-sm text-gray-600 list-disc list-inside">
           <li>The Booking Fee ensures your reservation is made.</li>
@@ -162,11 +210,51 @@ const Room = () => {
           <li>The ₹999 Booking Fee is fully adjustable against this security deposit payment.</li>
         </ul>
 
+        {/* Customer Info Fields */}
+        <div className="mt-6">
+          <label className="block text-gray-800">Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full p-2 mt-2 border rounded-md"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div className="mt-6">
+          <label className="block text-gray-800">Phone Number</label>
+          <input
+            type="tel"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+            className="w-full p-2 mt-2 border rounded-md"
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+
+        <div className="mt-6">
+          <label className="block text-gray-800">Email Address</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-2 mt-2 border rounded-md"
+            placeholder="Enter your email address"
+            required
+          />
+        </div>
 
         {/* Booking Button */}
         <div className="mt-6">
-          <button className="w-full bg-amber-500 text-white py-3 rounded-md shadow-lg hover:bg-amber-600 transition duration-300">
-            {`Book now`}
+          <button
+            onClick={handleFormSubmit}
+            disabled={!name || !number || !email || isSubmitting}
+            className={`w-full bg-amber-500 text-white py-3 rounded-md font-semibold ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+          >
+            {isSubmitting ? "Processing..." : "Book Now"}
           </button>
         </div>
       </div>

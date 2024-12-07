@@ -4,7 +4,6 @@ const axios = require('axios');
 class PhonePePaymentGateway{
     constructor(merchantId, apiKey, saltKey, environment = 'sandbox') {
         this.merchantId = merchantId,
-        this.apiKey = apiKey,
         this.saltKey = saltKey,
         this.baseUrl = environment === 'production' ? 'https://api.phonepe.com/v1' : 'https://api-preprod.phonepe.com/v1';
     }
@@ -15,11 +14,12 @@ class PhonePePaymentGateway{
     }
 
     // Payment Payload
-    createPaymentPayload(amount, transactionId, redirectUrl) {
+    createPaymentPayload(amount, merchantUserId, transactionId) {
+        const redirectUrl = `https://localhost:3000/payment/verify/${transactionId}`
         return {
             merchantId: this.merchantId,
             merchantTransactionId: transactionId,
-            merchantUserId: 'replace_with_userid',
+            merchantUserId: merchantUserId,
             amount: amount*100, // converting into paise 
             redirectUrl: redirectUrl,
             redirectMode: 'POST',
@@ -38,13 +38,13 @@ class PhonePePaymentGateway{
     }
 
     // Initiate Payment
-    async initiatePayment(amount, redirectUrl) {
+    async initiatePayment(amount, merchantUserId) {
         try {
             const transctionId = this.generateTransactionId();
-            const payload = this.createPaymentPayload(amount,transctionId,redirectUrl);
+            const payload = this.createPaymentPayload(amount,merchantUserId,transctionId);
             const checksum = this.generateChecksum(payload);
             const response = await axios.post(
-                `${this.baseUrl}/pg/v1/pay`,
+                `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay`,
                 {
                     request: Buffer.from(JSON.stringify(payload)).toString('base64')
                 },
