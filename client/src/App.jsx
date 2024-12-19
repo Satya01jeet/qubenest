@@ -62,10 +62,10 @@ function App() {
         <Route path='/rooms/:buildingName' element={<Room />} />
         
         {/* Rooms Page for Qubenest Splendour */}
-        <Route path="/rooms_splendour" element={<RoomSplendour />} />
+        {/* <Route path="/rooms_splendour" element={<RoomSplendour />} /> */}
 
         {/* RoomElite Page for Qubenest Elite */}
-        <Route path="/rooms_elite" element={<RoomElite />} />
+        {/* <Route path="/rooms_elite" element={<RoomElite />} /> */}
 
         {/* Location Section */}
         <Route path="/location" element={<LocationSection />} />

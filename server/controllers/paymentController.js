@@ -1,60 +1,111 @@
-const paymentGateway = require('../models/payments/PaymentGateway');
-const Booking = require('../models/booking');
+require('dotenv').config();
+const crypto =  require('crypto');
+const axios = require('axios');
 
-const gateway = new paymentGateway(
-    process.env.PHONEPE_MERCHANT_ID,
-    process.env.PHONEPE_SALT_KEY,
-    process.env.PHONEPE_ENVIRONMENT || 'sandbox'
-)
+const salt_key = process.env.PHONEPE_SALT_KEY;
+const merchant_id = process.env.PHONEPE_MERCHANT_ID
 
-const initiatePayment = async (req,res) => {
-    const {amount,merchantUserId} = req.body;
-    try{
-        const {transactionId, paymentUrl} = await gateway.initiatePayment(amount,merchantUserId);
-        console.log(transactionId, paymentUrl);
-        res.status(200).json({
-            success: true,
-            transactionId,
-            paymentUrl
-        })
-    } catch(error) {
-        console.error('Error initiating payment', error);
-        res.status(500).json({
-            success: false,
-            message: 'Payment initiation failed',
-            error: error.message
+const generateTransactionId = () => {
+    return `TX${Date.now()}${Math.floor(Math.random()*1000)}`; // 'TX' is a prefix just to indentify the string as transaction id
+}
+
+const newPayment = async (req, res) => {
+    try {
+        const merchantTransactionId = generateTransactionId();
+        const data = {
+            merchantId: merchant_id,
+            merchantTransactionId: merchantTransactionId,
+            merchantUserId: req.body.merchantUserId,
+            // name: req.body.roomData.customerName,
+            amount: req.body.amount * 100,
+            redirectUrl: `https://qubenest.com/payment/verify/${merchantTransactionId}`,
+            redirectMode: 'POST',
+            mobileNumber: req.body.roomData.customerNumber,
+            paymentInstrument: {
+                type: 'PAY_PAGE'
+            }
+        };
+        const payload = JSON.stringify(data);
+        const payloadMain = Buffer.from(payload).toString('base64');
+        const keyIndex = 1;
+        const string = payloadMain + '/pg/v1/pay' + salt_key;
+        const sha256 = crypto.createHash('sha256').update(string).digest('hex');
+        const checksum = sha256 + '###' + keyIndex;
+
+        const prod_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay"
+        const options = {
+            method: 'POST',
+            url: prod_URL,
+            headers: {
+                accept: 'application/json',
+                'Content-Type': 'application/json',
+                'X-VERIFY': checksum
+            },
+            data: {
+                request: payloadMain
+            }
+        };
+        console.log("ynha tk chl gya");
+        const response = await axios.request(options);
+        console.log(response);
+        if (response?.data?.success) {
+            return res.status(200).json({
+                success: true,
+                redirectUrl: response.data.data.instrumentResponse.redirectInfo.url,
+                transactionId: merchantTransactionId
+            });
+        } else {
+            return res.status(400).json({
+                message: "Failed to initiate payment",
+                success: false,
+                details: response.data
+            });
+        }
+
+    } catch (error) {
+        res.status(500).send({
+            message: error.message,
+            success: false
         })
     }
 }
 
-const verifyPayment = async (req, res) => {
-    const { transactionId } = req.params;
-    try {
-        const status = await gateway.verifyPaymentStatus(transactionId);
+const checkStatus = async(req, res) => {
+    const merchantTransactionId = res.req.body.transactionId
+    const merchantId = res.req.body.merchantId
 
-        if (status.code === 'PAYMENT_SUCCESS') { 
-            const booking = new Booking({
-                paymentId: transactionId,
-                roomType: req.body.roomType,
-                buildingName: req.body.buildingName,
-                roomTitle: req.body.roomTitle,
-                customerName: req.body.customerName,
-                customerNumber: req.body.customerNumber,
-                customerEmail: req.body.customerEmail,
-                amount: req.body.amount,
-                status: 'success',
-            });
+    const keyIndex = 1;
+    const string = `/pg/v1/status/${merchantId}/${merchantTransactionId}` + salt_key;
+    const sha256 = crypto.createHash('sha256').update(string).digest('hex');
+    const checksum = sha256 + "###" + keyIndex;
 
-            await booking.save(); // Save booking details
-            res.status(200).json({ success: true, message: 'Payment verified and booking saved!', booking });
-        } else {
-            res.status(400).json({ success: false, message: 'Payment verification failed', status });
-        }
-    } catch (error) {
-        console.error('Error verifying status: ', error);
-        res.status(500).json({ success: false, message: 'Payment verification failed', error: error.message });
+    const options = {
+    method: 'GET',
+    url: `https://api.phonepe.com/apis/hermes/pg/v1/status/${merchantId}/${merchantTransactionId}`,
+    headers: {
+        accept: 'application/json',
+        'Content-Type': 'application/json',
+        'X-VERIFY': checksum,
+        'X-MERCHANT-ID': `${merchantId}`
     }
+    };
+
+    // CHECK PAYMENT STATUS
+    axios.request(options).then(async(response) => {
+        if (response.data.success === true) {
+            const url = `http://localhost:3000/success`
+            return res.redirect(url)
+        } else {
+            const url = `http://localhost:3000/failure`
+            return res.redirect(url)
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 };
 
-
-module.exports = {initiatePayment,verifyPayment}
+module.exports = {
+    newPayment,
+    checkStatus
+}

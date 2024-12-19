@@ -44,7 +44,7 @@ const Room = () => {
   useEffect(() => {
     const fetchRoomData = async () => {
       try {
-        const response = await fetch(`http://13.232.98.230:3000/rooms/${buildingName}`);
+        const response = await fetch(`https://qubenest.com/rooms/${buildingName}`);
         if (!response.ok) {
           throw new Error("Room data not found");
         }
@@ -66,7 +66,7 @@ const Room = () => {
     if (name && number && email) {
       setIsSubmitting(true);
   
-      const amount = 999;
+      const amount = 1;
       const roomData = {
         roomType: selectedRoomType,
         buildingName: buildingName,
@@ -79,19 +79,21 @@ const Room = () => {
       const merchantUserId = `user_${number}_${Date.now()}`;
       
       try {
-        const response = await fetch("http://localhost:3000/payment/initiate", {
+        const response = await fetch("https://qubenest.com/payment/initiate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...roomData, amount, merchantUserId }),
+          body: JSON.stringify({ roomData, amount, merchantUserId }),
         });
   
         const data = await response.json();
+
+        console.log(data);
   
-        if (data.paymentUrl) {
+        if (data.redirectUrl) {
           // Redirect to PhonePe payment gateway
-          window.location.href = data.paymentUrl;
+          window.PhonePeCheckout.transact({ tokenUrl: data.redirectUrl });
         } else {
           alert("Payment initiation failed");
         }
@@ -106,10 +108,6 @@ const Room = () => {
     }
   };
   
-  
-
-
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -182,7 +180,7 @@ const Room = () => {
               : "bg-gray-300 text-gray-700 hover:bg-gray-400"
               }`}
           >
-            Single
+            {buildingName === 'qubenest_elite' ? "Single" : "Solo"}
           </button>
           <button
             onClick={() => setSelectedRoomType("double")}
@@ -191,7 +189,7 @@ const Room = () => {
               : "bg-gray-300 text-gray-700 hover:bg-gray-400"
               }`}
           >
-            Double
+            {buildingName === 'qubenest_elite' ? "Couple" : "Twin"}
           </button>
         </div>
 

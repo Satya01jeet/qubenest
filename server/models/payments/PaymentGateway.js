@@ -44,7 +44,7 @@ class PhonePePaymentGateway{
             const payload = this.createPaymentPayload(amount,merchantUserId,transctionId);
             const checksum = this.generateChecksum(payload);
             const response = await axios.post(
-                `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay`,
+                `https://api.phonepe.com/apis/hermes/pg/v1/pay m`,
                 {
                     request: Buffer.from(JSON.stringify(payload)).toString('base64')
                 },

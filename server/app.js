@@ -9,7 +9,8 @@ const paymentRouter = require('./routes/paymentRoutes');
 const buildingRouter = require('./routes/buildingRoutes');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000' }));
+
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
@@ -29,3 +30,5 @@ app.get('*', (req, res) => {
 app.listen(port, '0.0.0.0', () => {
   console.log(`App is listening on port: ${port}`);
 });
+
+// adding something to check

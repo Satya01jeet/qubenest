@@ -27,12 +27,12 @@ const City = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("Qubenest Elite");
 
-  const routeMap = {
-    "Qubenest Elite": "/elite",
-    "Qubenest Splendour": "/splendour"
-  };
+  // const routeMap = {
+  //   "Qubenest Elite": "/elite",
+  //   "Qubenest Splendour": "/splendour"
+  // };
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
   const locations = ["Qubenest Elite", "Qubenest Splendour"];
   const slides = [companies.slice(0, 4), companies.slice(4)];
 
