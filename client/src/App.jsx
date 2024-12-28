@@ -20,7 +20,9 @@ import Whatsapp from './components/Whatsapp';
 import RoomImage from './components/RoomImage';
 import Location from './components/Location';
 import Checkout from './components/Checkout';
-import Room from './components/Room'
+import Room from './components/Room';
+import Success from './components/success';
+import Failure from './components/failure';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -60,12 +62,9 @@ function App() {
         />
 
         <Route path='/rooms/:buildingName' element={<Room />} />
-        
-        {/* Rooms Page for Qubenest Splendour */}
-        {/* <Route path="/rooms_splendour" element={<RoomSplendour />} /> */}
 
-        {/* RoomElite Page for Qubenest Elite */}
-        {/* <Route path="/rooms_elite" element={<RoomElite />} /> */}
+        <Route path='/success' element={<Success />} />
+        <Route path='/failure' element={<Failure />} />
 
         {/* Location Section */}
         <Route path="/location" element={<LocationSection />} />

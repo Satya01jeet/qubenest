@@ -45,7 +45,6 @@ const newPayment = async (req, res) => {
                 request: payloadMain
             }
         };
-        console.log("ynha tk chl gya");
         const response = await axios.request(options);
         console.log(response);
         if (response?.data?.success) {
@@ -93,10 +92,10 @@ const checkStatus = async(req, res) => {
     // CHECK PAYMENT STATUS
     axios.request(options).then(async(response) => {
         if (response.data.success === true) {
-            const url = `http://localhost:3000/success`
+            const url = `http://qubenest.com/success`
             return res.redirect(url)
         } else {
-            const url = `http://localhost:3000/failure`
+            const url = `http://qubenest.com/failure`
             return res.redirect(url)
         }
     })
